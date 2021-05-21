@@ -7,12 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		330157E126582F65004DC0C6 /* SMOOApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330157E026582F65004DC0C6 /* SMOOApp.swift */; };
 		330157E326582F65004DC0C6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330157E226582F65004DC0C6 /* ContentView.swift */; };
 		330157E526582F66004DC0C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 330157E426582F66004DC0C6 /* Assets.xcassets */; };
 		330157E826582F66004DC0C6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 330157E726582F66004DC0C6 /* Preview Assets.xcassets */; };
 		330157F326582F66004DC0C6 /* SMOOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330157F226582F66004DC0C6 /* SMOOTests.swift */; };
 		330157FE26582F66004DC0C6 /* SMOOUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330157FD26582F66004DC0C6 /* SMOOUITests.swift */; };
+		3301581326583129004DC0C6 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3301581226583129004DC0C6 /* AppState.swift */; };
+		33015815265831BD004DC0C6 /* SystemEventsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33015814265831BD004DC0C6 /* SystemEventsHandler.swift */; };
+		330158172658324A004DC0C6 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330158162658324A004DC0C6 /* Store.swift */; };
+		3301581926583270004DC0C6 /* CancelBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3301581826583270004DC0C6 /* CancelBag.swift */; };
+		3301581B265832BB004DC0C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3301581A265832BB004DC0C6 /* AppDelegate.swift */; };
+		3301581D2658330E004DC0C6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3301581C2658330E004DC0C6 /* SceneDelegate.swift */; };
+		3301581F265833E8004DC0C6 /* RootViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3301581E265833E8004DC0C6 /* RootViewModifier.swift */; };
+		33015821265835BD004DC0C6 /* DependencyInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33015820265835BD004DC0C6 /* DependencyInjector.swift */; };
+		33015823265835E6004DC0C6 /* InteractorContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33015822265835E6004DC0C6 /* InteractorContainer.swift */; };
+		330158252658362C004DC0C6 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330158242658362C004DC0C6 /* AppEnvironment.swift */; };
+		3301582726583C6F004DC0C6 /* HostingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3301582626583C6F004DC0C6 /* HostingViewController.swift */; };
+		3301582926583F52004DC0C6 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3301582826583F52004DC0C6 /* NetworkHelper.swift */; };
+		3301582B26583FA1004DC0C6 /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3301582A26583FA1004DC0C6 /* ApiRequest.swift */; };
+		3301582D26583FD4004DC0C6 /* ApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3301582C26583FD4004DC0C6 /* ApiRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,7 +47,6 @@
 
 /* Begin PBXFileReference section */
 		330157DD26582F65004DC0C6 /* SMOO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SMOO.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		330157E026582F65004DC0C6 /* SMOOApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMOOApp.swift; sourceTree = "<group>"; };
 		330157E226582F65004DC0C6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		330157E426582F66004DC0C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		330157E726582F66004DC0C6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -45,6 +57,20 @@
 		330157F926582F66004DC0C6 /* SMOOUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SMOOUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		330157FD26582F66004DC0C6 /* SMOOUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMOOUITests.swift; sourceTree = "<group>"; };
 		330157FF26582F66004DC0C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3301581226583129004DC0C6 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		33015814265831BD004DC0C6 /* SystemEventsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemEventsHandler.swift; sourceTree = "<group>"; };
+		330158162658324A004DC0C6 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		3301581826583270004DC0C6 /* CancelBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelBag.swift; sourceTree = "<group>"; };
+		3301581A265832BB004DC0C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3301581C2658330E004DC0C6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		3301581E265833E8004DC0C6 /* RootViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModifier.swift; sourceTree = "<group>"; };
+		33015820265835BD004DC0C6 /* DependencyInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjector.swift; sourceTree = "<group>"; };
+		33015822265835E6004DC0C6 /* InteractorContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorContainer.swift; sourceTree = "<group>"; };
+		330158242658362C004DC0C6 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		3301582626583C6F004DC0C6 /* HostingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingViewController.swift; sourceTree = "<group>"; };
+		3301582826583F52004DC0C6 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		3301582A26583FA1004DC0C6 /* ApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
+		3301582C26583FD4004DC0C6 /* ApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,21 +121,15 @@
 		330157DF26582F65004DC0C6 /* SMOO */ = {
 			isa = PBXGroup;
 			children = (
-				330157E026582F65004DC0C6 /* SMOOApp.swift */,
-				330157E226582F65004DC0C6 /* ContentView.swift */,
-				330157E426582F66004DC0C6 /* Assets.xcassets */,
-				330157E926582F66004DC0C6 /* Info.plist */,
-				330157E626582F66004DC0C6 /* Preview Content */,
+				33015811265830F2004DC0C6 /* Injected */,
+				330158102658300B004DC0C6 /* UI */,
+				3301580F26583000004DC0C6 /* Utilities */,
+				3301580E26582FF8004DC0C6 /* Repositories */,
+				3301580D26582FEC004DC0C6 /* Interactors */,
+				3301580C26582FE7004DC0C6 /* System */,
+				3301580B26582F9A004DC0C6 /* Resources */,
 			);
 			path = SMOO;
-			sourceTree = "<group>";
-		};
-		330157E626582F66004DC0C6 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				330157E726582F66004DC0C6 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		330157F126582F66004DC0C6 /* SMOOTests */ = {
@@ -128,6 +148,73 @@
 				330157FF26582F66004DC0C6 /* Info.plist */,
 			);
 			path = SMOOUITests;
+			sourceTree = "<group>";
+		};
+		3301580B26582F9A004DC0C6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				330157E426582F66004DC0C6 /* Assets.xcassets */,
+				330157E926582F66004DC0C6 /* Info.plist */,
+				330157E726582F66004DC0C6 /* Preview Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3301580C26582FE7004DC0C6 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				33015814265831BD004DC0C6 /* SystemEventsHandler.swift */,
+				3301581A265832BB004DC0C6 /* AppDelegate.swift */,
+				3301581C2658330E004DC0C6 /* SceneDelegate.swift */,
+				330158242658362C004DC0C6 /* AppEnvironment.swift */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		3301580D26582FEC004DC0C6 /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactors;
+			sourceTree = "<group>";
+		};
+		3301580E26582FF8004DC0C6 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		3301580F26583000004DC0C6 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				330158162658324A004DC0C6 /* Store.swift */,
+				3301581826583270004DC0C6 /* CancelBag.swift */,
+				3301582826583F52004DC0C6 /* NetworkHelper.swift */,
+				3301582A26583FA1004DC0C6 /* ApiRequest.swift */,
+				3301582C26583FD4004DC0C6 /* ApiRepository.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		330158102658300B004DC0C6 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				330157E226582F65004DC0C6 /* ContentView.swift */,
+				3301581E265833E8004DC0C6 /* RootViewModifier.swift */,
+				3301582626583C6F004DC0C6 /* HostingViewController.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		33015811265830F2004DC0C6 /* Injected */ = {
+			isa = PBXGroup;
+			children = (
+				3301581226583129004DC0C6 /* AppState.swift */,
+				33015820265835BD004DC0C6 /* DependencyInjector.swift */,
+				33015822265835E6004DC0C6 /* InteractorContainer.swift */,
+			);
+			path = Injected;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +346,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3301582926583F52004DC0C6 /* NetworkHelper.swift in Sources */,
+				330158172658324A004DC0C6 /* Store.swift in Sources */,
+				33015821265835BD004DC0C6 /* DependencyInjector.swift in Sources */,
+				3301581D2658330E004DC0C6 /* SceneDelegate.swift in Sources */,
+				33015815265831BD004DC0C6 /* SystemEventsHandler.swift in Sources */,
+				3301581926583270004DC0C6 /* CancelBag.swift in Sources */,
+				3301582726583C6F004DC0C6 /* HostingViewController.swift in Sources */,
+				3301581326583129004DC0C6 /* AppState.swift in Sources */,
+				33015823265835E6004DC0C6 /* InteractorContainer.swift in Sources */,
+				3301581B265832BB004DC0C6 /* AppDelegate.swift in Sources */,
 				330157E326582F65004DC0C6 /* ContentView.swift in Sources */,
-				330157E126582F65004DC0C6 /* SMOOApp.swift in Sources */,
+				3301582D26583FD4004DC0C6 /* ApiRepository.swift in Sources */,
+				3301581F265833E8004DC0C6 /* RootViewModifier.swift in Sources */,
+				3301582B26583FA1004DC0C6 /* ApiRequest.swift in Sources */,
+				330158252658362C004DC0C6 /* AppEnvironment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,7 +447,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -402,7 +502,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -418,10 +518,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"SMOO/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SMOO/Resources\"";
 				DEVELOPMENT_TEAM = BVVAVTC3DA;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = SMOO/Info.plist;
+				INFOPLIST_FILE = SMOO/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -440,10 +540,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"SMOO/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SMOO/Resources\"";
 				DEVELOPMENT_TEAM = BVVAVTC3DA;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = SMOO/Info.plist;
+				INFOPLIST_FILE = SMOO/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
