@@ -30,7 +30,7 @@ extension AppState {
 
 extension AppState {
     struct System: Equatable {
-        var isActive: Bool = false
+        var isActive: Bool = true
     }
 }
 
