@@ -272,9 +272,6 @@ fastlane/test_output
 iOSInjectionProject/
 
 ### SwiftPackageManager ###
-Packages
-xcuserdata
-*.xcodeproj
 
 
 ### Xcode ###
@@ -284,14 +281,5 @@ xcuserdata
 
 
 
-## Gcc Patch
-/*.gcno
-
-### Xcode Patch ###
-*.xcodeproj/*
-!*.xcodeproj/project.pbxproj
-!*.xcodeproj/xcshareddata/
-!*.xcworkspace/contents.xcworkspacedata
-**/xcshareddata/WorkspaceSettings.xcsettings
 
 # End of https://www.toptal.com/developers/gitignore/api/react,visualstudiocode,intellij,java,osx
