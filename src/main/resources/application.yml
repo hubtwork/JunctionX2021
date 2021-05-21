@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    password: 1123
+    url: jdbc:mariadb://localhost:3306/pandalion?characterEncoding=UTF-8&serverTimezone=UTC&allowPublicKeyRetrieval=true&useSSL=false
+    username: root
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+  web:
+    resources:
+      add-mappings: true
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create
+    properties:
+      hiberate:
+        format_sql: true
+    database-platform: org.hibernate.dialect.MariaDBDialect
