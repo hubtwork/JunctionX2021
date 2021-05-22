@@ -1,21 +1,30 @@
 server:
   port: 8080
 
+# 배포 서버 data source
 spring:
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    password: 1234
-    url: jdbc:mariadb://localhost:3306/pandalion?characterEncoding=UTF-8&serverTimezone=UTC&allowPublicKeyRetrieval=true&useSSL=false
-    username: root
-#  jackson:
-#    property-naming-strategy: SNAKE_CASE
+    password: akdntm123!
+    url: jdbc:mariadb://junctionx.mariadb.database.azure.com/pandalion?characterEncoding=UTF-8&serverTimezone=UTC&allowPublicKeyRetrieval=true&useSSL=false
+    username: dohyun
+
+
+# 로컬 서버 data source
+
+#  datasource:
+#    driver-class-name: org.mariadb.jdbc.Driver
+#    password: 1234
+#    url: jdbc:mariadb://localhost:8080/pandalion?characterEncoding=UTF-8&serverTimezone=UTC&allowPublicKeyRetrieval=true&useSSL=false
+#    username: root
+
   web:
     resources:
       add-mappings: true
   jpa:
     generate-ddl: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
     properties:
       hiberate:
         format_sql: true
