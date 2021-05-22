@@ -1,29 +1,66 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
-import { List, Menu, MenuItem, Button } from '@material-ui/core';
-import mailFolderListItems from '../components/Main/channelData';
+import styledComponent from 'styled-components';
+import { Menu, MenuItem, Button } from '@material-ui/core';
+import { styled, withStyles, StylesProvider } from '@material-ui/core/styles';
+import ChannelListItems from '../components/Main/ChannelListItems';
 import TabPanel from '../components/Main/TabPanel';
-import NavTabs from '../components/Main/NavTabs';
+// import NavTabs from '../components/Main/NavTabs';
 
-const Container = styled.div`
+const Container = styledComponent.div`
   width: 100%;
   display: flex;
 `;
 
-const SideBar = styled.div`
-  width: 350px;
-  min-width: 300px;
+const SideBar = styledComponent.div`
+  width: 100%;
+  max-width: 400px;
   height: 100vh;
   background-color: #454545;
+  text-align: center;
 `;
 
-const SideBarTitleContainer = styled.div`
+const CustomButton = styled(Button)({
+  width: '100%',
+  minWidth: '400px',
+  height: '7rem',
+  fontSize: '2.5rem',
+  fontWeight: 'bold',
+  color: '#7ffa91',
+  position: 'relative',
+  wordBreak: 'keep-all',
+  margin: '0',
+});
+
+const StyledMenu = withStyles({
+  paper: {
+    border: '1px solid #d3d4d5',
+    width: '100%',
+    maxWidth: '250px',
+  },
+})(props => (
+  <Menu
+    elevation={0}
+    getContentAnchorEl={null}
+    anchorOrigin={{
+      vertical: 'bottom',
+      horizontal: 'center',
+    }}
+    transformOrigin={{
+      vertical: 'top',
+      horizontal: 'center',
+    }}
+    {...props}
+  />
+));
+
+const SideBarTitleContainer = styledComponent.div`
   height: 7rem;
   text-align: center;
   align-items: center;
 `;
 
-const SideBarTitle = styled.span`
+const SideBarTitle = styledComponent.span`
   display: block;
   font-size: 2.5rem;
   color: #7ffa91;
@@ -32,7 +69,7 @@ const SideBarTitle = styled.span`
 `;
 
 function Main() {
-  const [title, setTitle] = useState('Project');
+  const [title, setTitle] = useState('2021 MS Conference');
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = event => {
@@ -46,13 +83,30 @@ function Main() {
   return (
     <Container>
       <SideBar>
-        <SideBarTitleContainer>
+        <CustomButton
+          aria-controls="simple-menu"
+          aria-haspopup="true"
+          onClick={handleClick}
+        >
+          {title}
+        </CustomButton>
+        <StyledMenu
+          id="simple-menu"
+          anchorEl={anchorEl}
+          keepMounted
+          open={Boolean(anchorEl)}
+          onClose={handleClose}
+        >
+          <MenuItem onClick={handleClose}>Profile</MenuItem>
+          <MenuItem onClick={handleClose}>My account</MenuItem>
+          <MenuItem onClick={handleClose}>Logout</MenuItem>
+        </StyledMenu>
+        {/* <SideBarTitleContainer>
           <SideBarTitle>{title}</SideBarTitle>
-        </SideBarTitleContainer>
-        <List>{mailFolderListItems}</List>
+        </SideBarTitleContainer> */}
+        <ChannelListItems />
       </SideBar>
       <TabPanel />
-      {/* <NavTabs /> */}
     </Container>
   );
 }

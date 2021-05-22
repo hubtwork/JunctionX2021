@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
-import { styled, makeStyles, StylesProvider } from '@material-ui/core/styles';
+import { styled, makeStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 import styledComponent from 'styled-components';
 import AppBar from '@material-ui/core/AppBar';
