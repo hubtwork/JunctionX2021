@@ -29,7 +29,6 @@
 		3301583326584455004DC0C6 /* CodeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3301583226584455004DC0C6 /* CodeTextField.swift */; };
 		3301583526584A4B004DC0C6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3301583426584A4B004DC0C6 /* Extensions.swift */; };
 		3301583726584B7C004DC0C6 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3301583626584B7C004DC0C6 /* RoundButton.swift */; };
-		3301583926584F9B004DC0C6 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3301583826584F9B004DC0C6 /* Chat.swift */; };
 		3301583E2658A357004DC0C6 /* ChatMembers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3301583D2658A357004DC0C6 /* ChatMembers.swift */; };
 		330158412658C2EC004DC0C6 /* ChatSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330158402658C2EC004DC0C6 /* ChatSection.swift */; };
 		330158432658CB9B004DC0C6 /* ChatMemberColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330158422658CB9B004DC0C6 /* ChatMemberColumn.swift */; };
@@ -40,6 +39,8 @@
 		3301585226590A10004DC0C6 /* VoiceChatMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3301585126590A10004DC0C6 /* VoiceChatMenuButton.swift */; };
 		3301585526590D88004DC0C6 /* MapMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3301585426590D88004DC0C6 /* MapMenuButton.swift */; };
 		3301585826590FDF004DC0C6 /* DriveMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3301585726590FDF004DC0C6 /* DriveMenuButton.swift */; };
+		3301585C26592406004DC0C6 /* USERS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3301585B26592406004DC0C6 /* USERS.swift */; };
+		3301585E26593EB6004DC0C6 /* DisclosureList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3301585D26593EB6004DC0C6 /* DisclosureList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,7 +89,6 @@
 		3301583226584455004DC0C6 /* CodeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextField.swift; sourceTree = "<group>"; };
 		3301583426584A4B004DC0C6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		3301583626584B7C004DC0C6 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
-		3301583826584F9B004DC0C6 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		3301583D2658A357004DC0C6 /* ChatMembers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMembers.swift; sourceTree = "<group>"; };
 		330158402658C2EC004DC0C6 /* ChatSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatSection.swift; sourceTree = "<group>"; };
 		330158422658CB9B004DC0C6 /* ChatMemberColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMemberColumn.swift; sourceTree = "<group>"; };
@@ -99,6 +99,8 @@
 		3301585126590A10004DC0C6 /* VoiceChatMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceChatMenuButton.swift; sourceTree = "<group>"; };
 		3301585426590D88004DC0C6 /* MapMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMenuButton.swift; sourceTree = "<group>"; };
 		3301585726590FDF004DC0C6 /* DriveMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveMenuButton.swift; sourceTree = "<group>"; };
+		3301585B26592406004DC0C6 /* USERS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USERS.swift; sourceTree = "<group>"; };
+		3301585D26593EB6004DC0C6 /* DisclosureList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclosureList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,9 +254,9 @@
 		3301582E265840B5004DC0C6 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				330158442658D1E9004DC0C6 /* MainMenu.swift */,
 				330157E226582F65004DC0C6 /* ContentView.swift */,
 				3301582F2658415D004DC0C6 /* Signing.swift */,
-				3301583826584F9B004DC0C6 /* Chat.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -271,15 +273,12 @@
 		3301583A26585027004DC0C6 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				3301585A26591B2A004DC0C6 /* DrawerMenu */,
 				3301585926591AD0004DC0C6 /* ChatCommon */,
 				3301585626590FC8004DC0C6 /* Drive */,
 				3301585326590D78004DC0C6 /* Map */,
 				3301584C2658F692004DC0C6 /* TextChat */,
 				3301584B2658F68C004DC0C6 /* VoiceChat */,
-				3301583D2658A357004DC0C6 /* ChatMembers.swift */,
-				330158402658C2EC004DC0C6 /* ChatSection.swift */,
-				330158422658CB9B004DC0C6 /* ChatMemberColumn.swift */,
-				330158442658D1E9004DC0C6 /* MainMenu.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -287,6 +286,7 @@
 		3301583F2658A42A004DC0C6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3301585B26592406004DC0C6 /* USERS.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -337,6 +337,17 @@
 			children = (
 			);
 			path = ChatCommon;
+			sourceTree = "<group>";
+		};
+		3301585A26591B2A004DC0C6 /* DrawerMenu */ = {
+			isa = PBXGroup;
+			children = (
+				3301583D2658A357004DC0C6 /* ChatMembers.swift */,
+				330158402658C2EC004DC0C6 /* ChatSection.swift */,
+				330158422658CB9B004DC0C6 /* ChatMemberColumn.swift */,
+				3301585D26593EB6004DC0C6 /* DisclosureList.swift */,
+			);
+			path = DrawerMenu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -472,7 +483,6 @@
 				3301583726584B7C004DC0C6 /* RoundButton.swift in Sources */,
 				3301582926583F52004DC0C6 /* NetworkHelper.swift in Sources */,
 				330158412658C2EC004DC0C6 /* ChatSection.swift in Sources */,
-				3301583926584F9B004DC0C6 /* Chat.swift in Sources */,
 				330158172658324A004DC0C6 /* Store.swift in Sources */,
 				3301583326584455004DC0C6 /* CodeTextField.swift in Sources */,
 				33015821265835BD004DC0C6 /* DependencyInjector.swift in Sources */,
@@ -481,9 +491,11 @@
 				3301583E2658A357004DC0C6 /* ChatMembers.swift in Sources */,
 				3301585526590D88004DC0C6 /* MapMenuButton.swift in Sources */,
 				33015815265831BD004DC0C6 /* SystemEventsHandler.swift in Sources */,
+				3301585C26592406004DC0C6 /* USERS.swift in Sources */,
 				3301581926583270004DC0C6 /* CancelBag.swift in Sources */,
 				3301581326583129004DC0C6 /* AppState.swift in Sources */,
 				33015823265835E6004DC0C6 /* InteractorContainer.swift in Sources */,
+				3301585E26593EB6004DC0C6 /* DisclosureList.swift in Sources */,
 				33015850265909EB004DC0C6 /* TextChatMenuButton.swift in Sources */,
 				3301581B265832BB004DC0C6 /* AppDelegate.swift in Sources */,
 				330158452658D1E9004DC0C6 /* MainMenu.swift in Sources */,
