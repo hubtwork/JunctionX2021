@@ -6,6 +6,7 @@ module.exports = {
     es6: true,
     node: true,
   },
+  parser: 'babel-eslint',
   extends: [
     'airbnb',
     'prettier',
@@ -20,5 +21,13 @@ module.exports = {
       },
     ],
     'no-console': 0,
+    'no-unused-vars': 1,
+  },
+  settings: {
+    'import/resolver': {
+      node: {
+        moduleDirectory: ['node_modules', 'src'],
+      },
+    },
   },
 };
