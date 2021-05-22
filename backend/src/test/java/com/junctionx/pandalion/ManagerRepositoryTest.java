@@ -27,7 +27,7 @@ public class ManagerRepositoryTest extends PandalionApplicationTests {
                 .age(34)
                 .password("")
                 .nation("Seoul")
-                //.authorities(Collections.singleton(authority))
+//                .authorities(Collections.singleton(authority))
                 .activated(true)
                 .build();
 
