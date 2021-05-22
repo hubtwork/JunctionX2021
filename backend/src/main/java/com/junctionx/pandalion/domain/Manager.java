@@ -1,9 +1,7 @@
 package com.junctionx.pandalion.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.*;
 import lombok.experimental.Accessors;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
@@ -13,6 +11,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.Set;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -21,18 +20,36 @@ import java.time.LocalDateTime;
 @EntityListeners(AuditingEntityListener.class)
 @Builder
 @Accessors(chain = true)
-public class User {
+@Table(name = "manager")
+public class Manager {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id")
+    @Column(name = "manager_id")
     private Long id;
 
-    private String name;
+    private Integer age;
 
-    private String code;
+    private String nation;
 
-    private String location;
+    private String username;
+
+    private String nickname;
+
+    @JsonIgnore
+    private String password;
+
+    @JsonIgnore
+    private boolean activated;
+
+    @ManyToMany
+    @JoinTable(
+            name = "manager_authority",
+            joinColumns = {@JoinColumn(name = "manager_id", referencedColumnName = "manager_id")},
+            inverseJoinColumns = {@JoinColumn(name = "authority_name", referencedColumnName = "authority_name")}
+    )
+    private Set<Authority> authorities;
+
 
     @CreatedBy
     private String createdBy;
