@@ -20,6 +20,7 @@ module.exports = {
         extensions: ['.js', '.jsx'],
       },
     ],
+    'import/extensions': ['off'],
     'no-console': 0,
     'no-unused-vars': 1,
   },
