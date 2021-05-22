@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import DetailsIcon from '@material-ui/icons/Details';
 import ChangeHistoryIcon from '@material-ui/icons/ChangeHistory';
+import PropTypes from 'prop-types';
 
 const ChannelContainer = styled.div`
   display: flex;
@@ -58,22 +59,29 @@ const ChannelLink = styled.a`
   margin: 1rem 0;
 `;
 
-function ChannelListItems() {
-  const [isOpen, setIsOpen] = useState(false);
+function ChannelListItems({ changeHeader }) {
+  const [isOpen, setIsOpen] = useState(true);
 
   const dummyData = ['1', '2', '3'];
   useEffect(() => {
     console.log('click!!@');
   }, [isOpen]);
+
   const handleClick = () => {
     console.log('click');
     setIsOpen(!isOpen);
   };
+
+  const changeChannel = idx => {
+    console.log(idx);
+    changeHeader('change');
+  };
+
   return (
     <ChannelContainer>
       <FolderContainer onClick={handleClick}>
         <Folder> hello </Folder>
-        {isOpen ? (
+        {/* {isOpen ? (
           <DetailsIcon color="#7ffa91" />
         ) : (
           <>
@@ -85,7 +93,7 @@ function ChannelListItems() {
               color="#7ffa91"
             />
           </>
-        )}
+        )} */}
       </FolderContainer>
       <ChannelListContainer open={isOpen}>
         <ChannelList open={isOpen}>
@@ -93,7 +101,7 @@ function ChannelListItems() {
             <ChannelLink>Hello</ChannelLink>
           </ChannelItem>
           <ChannelItem open={isOpen}>
-            <ChannelLink>Hello</ChannelLink>
+            <ChannelLink onClick={changeChannel}>Hello</ChannelLink>
           </ChannelItem>
           <ChannelItem open={isOpen}>
             <ChannelLink>Hello</ChannelLink>
@@ -121,5 +129,9 @@ function ChannelListItems() {
     </ChannelContainer>
   );
 }
+
+ChannelListItems.propTypes = {
+  changeHeader: PropTypes.func.isRequired,
+};
 
 export default ChannelListItems;

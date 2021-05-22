@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import React from 'react';
+import React, { useState } from 'react';
 import { styled, makeStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 import styledComponent from 'styled-components';
@@ -38,6 +38,19 @@ const LogoImage = styledComponent.img`
   vertical-align: middle;
 `;
 
+const Header = styledComponent.div`
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 7.2rem;
+  padding-left: 4.6rem;
+  border-bottom: 1px solid #939393;
+  color: #454545;
+  font-size: 24px;
+  visibility: ${props =>
+    props.value !== 4 || props.value !== 0 ? 'visible' : 'none'}
+`;
+
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -50,7 +63,7 @@ function TabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box p={4}>
+        <Box p={5}>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -93,16 +106,21 @@ const useStyles = makeStyles(theme => ({
   indicator: {
     backgroundColor: '#7FFA91',
   },
+  hiddenIndicator: {
+    backgroundColor: '#454545',
+  },
 }));
 
-export default function NavTabs() {
+export default function NavTabs({ headerText }) {
   const classes = useStyles();
-  const [value, setValue] = React.useState(-1);
+  const [value, setValue] = useState(0);
 
   const handleChange = (event, newValue) => {
-    setValue(newValue);
+    if (headerText === '') alert('채널을 선택해주세요');
+    else setValue(newValue);
   };
 
+  console.log(`headerText: ${headerText}`);
   return (
     <div className={classes.root}>
       <CustomAppBar position="static">
@@ -111,35 +129,54 @@ export default function NavTabs() {
           onChange={handleChange}
           aria-label="nav tabs"
           classes={{
-            indicator: classes.indicator,
+            indicator:
+              value !== 0 ? classes.indicator : classes.hiddenIndicator,
           }}
         >
-          <LinkTab label="Page One" href="/drafts" {...a11yProps(0, value)} />
-          <LinkTab label="Page Two" href="/trash" {...a11yProps(1, value)} />
-          <LinkTab label="Page Three" href="/spam" {...a11yProps(2, value)} />
-          <LinkTab label="Page Four" href="/spam" {...a11yProps(3, value)} />
+          <LinkTab
+            label="Page Hidden"
+            href="/drafts"
+            {...a11yProps(0, value)}
+            style={{ display: 'none' }}
+          />
+          <LinkTab label="Voice" {...a11yProps(1, value)} />
+          <LinkTab label="Chat" {...a11yProps(2, value)} />
+          <LinkTab label="Drive" {...a11yProps(3, value)} />
+          <LinkTab label="Map" {...a11yProps(4, value)} />
         </Tabs>
       </CustomAppBar>
-      {value === -1 ? (
+      {value === 0 ? (
         <InitialPanel>
           <LogoImage src={logo} alt="logo" />{' '}
         </InitialPanel>
       ) : (
         <>
-          <TabPanel value={value} index={0}>
-            Page One
+          <Header value={value}>{headerText}</Header>
+          <TabPanel style={{ display: 'none' }} value={value} index={0}>
+            Page Hidden
           </TabPanel>
           <TabPanel value={value} index={1}>
-            Page Two
+            Voice
           </TabPanel>
           <TabPanel value={value} index={2}>
-            Page Three
+            Chat
           </TabPanel>
           <TabPanel value={value} index={3}>
-            Page Four
+            Drive
+          </TabPanel>
+          <TabPanel value={value} index={4}>
+            Map
           </TabPanel>
         </>
       )}
     </div>
   );
 }
+
+NavTabs.propTypes = {
+  headerText: PropTypes.string,
+};
+
+NavTabs.defaultProps = {
+  headerText: '',
+};
