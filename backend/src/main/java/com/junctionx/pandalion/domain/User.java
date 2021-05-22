@@ -34,6 +34,8 @@ public class User {
 
     private String location;
 
+    private String phoneNumber;
+
     @CreatedBy
     private String createdBy;
 

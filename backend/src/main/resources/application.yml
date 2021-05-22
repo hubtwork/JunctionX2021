@@ -11,7 +11,7 @@ spring:
 
 
 # 로컬 서버 data source
-
+#
 #  datasource:
 #    driver-class-name: org.mariadb.jdbc.Driver
 #    password: 1234
@@ -24,7 +24,7 @@ spring:
   jpa:
     generate-ddl: true
     hibernate:
-      ddl-auto: none
+      ddl-auto: update
     properties:
       hiberate:
         format_sql: true
