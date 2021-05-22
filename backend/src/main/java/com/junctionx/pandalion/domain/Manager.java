@@ -11,6 +11,8 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 @NoArgsConstructor
@@ -52,6 +54,8 @@ public class Manager {
     )
     private Set<Authority> authorities;
 
+    @OneToMany(mappedBy = "manager")
+    private List<Group> groupList = new ArrayList<>();
 
     @CreatedBy
     private String createdBy;

@@ -45,4 +45,7 @@ public class Channel {
 
     @LastModifiedDate
     private LocalDateTime updatedAt;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Group group;
 }

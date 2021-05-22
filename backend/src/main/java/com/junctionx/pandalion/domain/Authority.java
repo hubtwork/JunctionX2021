@@ -21,4 +21,5 @@ public class Authority {
     @Id
     @Column(name = "authority_name")
     private String authorityName;
+
 }

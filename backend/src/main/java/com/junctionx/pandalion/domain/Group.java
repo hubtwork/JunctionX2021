@@ -13,6 +13,8 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -45,4 +47,9 @@ public class Group {
     @LastModifiedDate
     private LocalDateTime updatedAt;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Manager manager;
+
+    @OneToMany(mappedBy = "group")
+    private List<Channel> channelList = new ArrayList<>();
 }

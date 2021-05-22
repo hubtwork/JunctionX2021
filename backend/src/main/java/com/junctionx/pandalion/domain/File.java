@@ -14,36 +14,36 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-@NoArgsConstructor
-@AllArgsConstructor
-@Data
-@Entity
-@EntityListeners(AuditingEntityListener.class)
-@Builder
-@Accessors(chain = true)
-public class File {
-
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "file_id")
-    private Long id;
-
-    private String originFileName;
-
-    private String serverFileName;
-
-    private String filePath;
-
-    private String workTp;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Manager manager;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    private User user;
-
-    @CreatedDate
-    private LocalDateTime createdAt;
-
-    @LastModifiedDate
-    private LocalDateTime updatedAt;
-}
+//@NoArgsConstructor
+//@AllArgsConstructor
+//@Data
+//@Entity
+//@EntityListeners(AuditingEntityListener.class)
+//@Builder
+//@Accessors(chain = true)
+//public class File {
+//
+//    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @Column(name = "file_id")
+//    private Long id;
+//
+//    private String originFileName;
+//
+//    private String serverFileName;
+//
+//    private String filePath;
+//
+//    private String workTp;
+//
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    private Manager manager;
+//
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    private User user;
+//
+//    @CreatedDate
+//    private LocalDateTime createdAt;
+//
+//    @LastModifiedDate
+//    private LocalDateTime updatedAt;
+//}
