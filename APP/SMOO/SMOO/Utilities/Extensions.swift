@@ -13,3 +13,9 @@ extension UIScreen{
     static let screenHeight = UIScreen.main.bounds.size.height
     static let screenSize = UIScreen.main.bounds.size
 }
+
+
+extension Color {
+    static let smooGreen = Color("SmooGreen")
+    static let smooGray = Color("SmooGray")
+}
