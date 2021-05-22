@@ -28,7 +28,7 @@ public class File {
     @Column(name = "file_id")
     private Long id;
 
-    private LocalDateTime registeredTime;
+    private String registeredTime;
 
     private String originFileName;
 
@@ -39,6 +39,8 @@ public class File {
     private String capacity;
 
     private String auth;
+
+    private String type;
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Manager manager;

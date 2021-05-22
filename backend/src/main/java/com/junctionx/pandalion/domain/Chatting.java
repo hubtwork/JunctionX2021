@@ -26,7 +26,9 @@ public class Chatting {
     @Column(length = 1000)
     private String text;
 
-    private LocalDateTime registeredTime;
+    private boolean self;
+
+    private String registeredTime;
 
     @ManyToOne(fetch = FetchType.LAZY)
     private User user;

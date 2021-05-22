@@ -6,7 +6,9 @@ import com.junctionx.pandalion.jwt.TokenProvider;
 import com.junctionx.pandalion.network.dto.LoginDto;
 import com.junctionx.pandalion.network.dto.ManagerDto;
 import com.junctionx.pandalion.network.dto.TokenDto;
+import com.junctionx.pandalion.network.response.ForWebResponse;
 import com.junctionx.pandalion.service.ManagerService;
+import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
@@ -54,6 +56,12 @@ public class ManagerApiController {
         httpHeaders.add(JwtFilter.AUTHORIZATION_HEADER, "Bearer " + jwt);
 
         return new ResponseEntity<>(new TokenDto(jwt), httpHeaders, HttpStatus.OK);
+    }
+
+    @GetMapping("/forweb")
+    public ForWebResponse forweb(){
+
+        return managerService.forweb();
     }
 
 }

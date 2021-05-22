@@ -40,7 +40,7 @@ public class FileApiController {
     private final UserRepository userRepository;
 
     @PostMapping("/send/manager")
-    public FileResponse sendManagerFile(HttpServletRequest request, @RequestParam("file") MultipartFile[] files) throws ParseException {
+    public SendFileResponse sendManagerFile(HttpServletRequest request, @RequestParam("file") MultipartFile[] files) throws ParseException {
 
         String bearerToken = request.getHeader("Authorization");
         String token = bearerToken.substring(7);
@@ -54,14 +54,14 @@ public class FileApiController {
         Manager manager = managerRepository.findOneByUsername(username);
         String s = fileService.uploadManagerFile(files, manager.getId());
 
-        return new FileResponse(s);
+        return new SendFileResponse(s);
     }
 
     @Data
-    static class FileResponse {
+    static class SendFileResponse {
         private String description;
 
-        public FileResponse(String description) {
+        public SendFileResponse(String description) {
             this.description = description;
         }
     }
