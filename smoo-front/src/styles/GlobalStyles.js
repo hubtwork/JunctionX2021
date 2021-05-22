@@ -12,7 +12,6 @@ const GlobalStyles = createGlobalStyle`
         -moz-user-select: none;
         -ms-user-select: none;
         user-select: none;
-
   }
   html {
         // 1rem을 10px로 설정
