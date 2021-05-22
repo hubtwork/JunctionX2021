@@ -14,19 +14,19 @@ struct ChatSection: View {
     var body: some View {
         HStack {
             Text(title)
-                .font(.custom("TypeFace", size: 20))
+                .font(.custom("ITC Avant Garde Gothic Bold", size: 20))
                 .bold()
-                .foregroundColor(Color.smooGray)
+                .foregroundColor(Color.white)
             Spacer()
         }
         .padding(.vertical, 10)
         .padding(.horizontal, 10)
-        .background(Color.white)
     }
 }
 
 struct ChatSection_Previews: PreviewProvider {
     static var previews: some View {
         ChatSection(title: "Team #1")
+            .background(Color.smooGray)
     }
 }

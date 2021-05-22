@@ -24,51 +24,50 @@ extension Signing {
         ZStack {
             /// Logo & code Field
             logoBoundary
-            codeBoundary
+                .padding(.horizontal, 60)
             
             buttonBoundary
-        }
+        }.background(Color.smooGray)
+        .ignoresSafeArea(.all)
     }
     
     var logoBoundary: some View {
         VStack {
             Spacer()
             /// Logo
-            VStack{
+            VStack(spacing: 100) {
+                Image("logo")
+                    .resizable()
+                    .frame(width: 200, height: 55)
+                    .padding(.top, 40)
                 
+                CodeTextField(text: $code,
+                              fontSize: 20,
+                              bgColor: Color.white)
+                    .frame(height: 30)
+                    .padding(.bottom, 40)
             }
-            .frame(width: UIScreen.screenWidth * 0.5,
-                    height: UIScreen.screenWidth * 0.3)
-            .border(Color.black, width: 1)
-            .padding(.bottom, 200)
+            .padding()
+            .padding(.horizontal, 20)
+            .background(Color.white)
+            .cornerRadius(20)
+            
             Spacer()
+            
         }
-    }
-    
-    var codeBoundary: some View {
-        VStack {
-            Spacer()
-            CodeTextField(text: $code,
-                          fontSize: 20,
-                          bgColor: Color.white)
-                .frame(height: 30)
-            Spacer()
-        }
-        .padding(.top, 30)
-        .padding(.horizontal, 60)
     }
     
     var buttonBoundary: some View {
         VStack {
+            Spacer()
             HStack {
                 Spacer()
-                Image(systemName: "plus.circle")
+                Image(systemName: "text.bubble.fill")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 30, height: 30)
-            }.padding(.top, 20)
-            .padding(.trailing, 20)
-            Spacer()
+                    .foregroundColor(Color.smooGreen)
+            }.padding([.trailing, .bottom], 40)
         }
     }
     
@@ -77,6 +76,6 @@ extension Signing {
 struct Signing_Previews: PreviewProvider {
     static var previews: some View {
         Signing()
-            .inject(.preview)
+            .inject(.preview).previewDevice("iPhone 12")
     }
 }
