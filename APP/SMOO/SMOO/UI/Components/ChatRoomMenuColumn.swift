@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ChatRoomMenuColumn: View {
     
+    let isSelected: Binding<Bool>
     let title: String
     
     var body: some View {
@@ -22,6 +23,9 @@ struct ChatRoomMenuColumn: View {
 
 struct ChatRoomMenu_Previews: PreviewProvider {
     static var previews: some View {
-        ChatRoomMenuColumn(title: "MAP")
+        VStack(spacing: 10) {
+            ChatRoomMenuColumn(isSelected: .constant(true), title: "MAP")
+            ChatRoomMenuColumn(isSelected: .constant(false), title: "MAP")
+        }
     }
 }

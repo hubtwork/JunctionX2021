@@ -19,3 +19,9 @@ extension Color {
     static let smooGreen = Color("SmooGreen")
     static let smooGray = Color("SmooGray")
 }
+
+extension View {
+    func border(width: CGFloat, edges: [Edge], color: Color) -> some View {
+        overlay(EdgeBorder(width: width, edges: edges).foregroundColor(color))
+    }
+}
