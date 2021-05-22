@@ -22,10 +22,16 @@
 		33015821265835BD004DC0C6 /* DependencyInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33015820265835BD004DC0C6 /* DependencyInjector.swift */; };
 		33015823265835E6004DC0C6 /* InteractorContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33015822265835E6004DC0C6 /* InteractorContainer.swift */; };
 		330158252658362C004DC0C6 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330158242658362C004DC0C6 /* AppEnvironment.swift */; };
-		3301582726583C6F004DC0C6 /* HostingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3301582626583C6F004DC0C6 /* HostingViewController.swift */; };
 		3301582926583F52004DC0C6 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3301582826583F52004DC0C6 /* NetworkHelper.swift */; };
 		3301582B26583FA1004DC0C6 /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3301582A26583FA1004DC0C6 /* ApiRequest.swift */; };
 		3301582D26583FD4004DC0C6 /* ApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3301582C26583FD4004DC0C6 /* ApiRepository.swift */; };
+		330158302658415D004DC0C6 /* Signing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3301582F2658415D004DC0C6 /* Signing.swift */; };
+		3301583326584455004DC0C6 /* CodeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3301583226584455004DC0C6 /* CodeTextField.swift */; };
+		3301583526584A4B004DC0C6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3301583426584A4B004DC0C6 /* Extensions.swift */; };
+		3301583726584B7C004DC0C6 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3301583626584B7C004DC0C6 /* RoundButton.swift */; };
+		3301583926584F9B004DC0C6 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3301583826584F9B004DC0C6 /* Chat.swift */; };
+		3301583C2658503B004DC0C6 /* NavigationDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3301583B2658503B004DC0C6 /* NavigationDrawer.swift */; };
+		3301583E2658A357004DC0C6 /* ChatMembers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3301583D2658A357004DC0C6 /* ChatMembers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,10 +73,16 @@
 		33015820265835BD004DC0C6 /* DependencyInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjector.swift; sourceTree = "<group>"; };
 		33015822265835E6004DC0C6 /* InteractorContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorContainer.swift; sourceTree = "<group>"; };
 		330158242658362C004DC0C6 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
-		3301582626583C6F004DC0C6 /* HostingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingViewController.swift; sourceTree = "<group>"; };
 		3301582826583F52004DC0C6 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		3301582A26583FA1004DC0C6 /* ApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
 		3301582C26583FD4004DC0C6 /* ApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRepository.swift; sourceTree = "<group>"; };
+		3301582F2658415D004DC0C6 /* Signing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signing.swift; sourceTree = "<group>"; };
+		3301583226584455004DC0C6 /* CodeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextField.swift; sourceTree = "<group>"; };
+		3301583426584A4B004DC0C6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		3301583626584B7C004DC0C6 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		3301583826584F9B004DC0C6 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		3301583B2658503B004DC0C6 /* NavigationDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDrawer.swift; sourceTree = "<group>"; };
+		3301583D2658A357004DC0C6 /* ChatMembers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMembers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +133,7 @@
 		330157DF26582F65004DC0C6 /* SMOO */ = {
 			isa = PBXGroup;
 			children = (
+				3301583F2658A42A004DC0C6 /* Model */,
 				33015811265830F2004DC0C6 /* Injected */,
 				330158102658300B004DC0C6 /* UI */,
 				3301580F26583000004DC0C6 /* Utilities */,
@@ -193,6 +206,7 @@
 				3301582826583F52004DC0C6 /* NetworkHelper.swift */,
 				3301582A26583FA1004DC0C6 /* ApiRequest.swift */,
 				3301582C26583FD4004DC0C6 /* ApiRepository.swift */,
+				3301583426584A4B004DC0C6 /* Extensions.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -200,9 +214,10 @@
 		330158102658300B004DC0C6 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				330157E226582F65004DC0C6 /* ContentView.swift */,
+				3301583A26585027004DC0C6 /* Components */,
+				33015831265841B2004DC0C6 /* SupportingViews */,
+				3301582E265840B5004DC0C6 /* Screens */,
 				3301581E265833E8004DC0C6 /* RootViewModifier.swift */,
-				3301582626583C6F004DC0C6 /* HostingViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -215,6 +230,41 @@
 				33015822265835E6004DC0C6 /* InteractorContainer.swift */,
 			);
 			path = Injected;
+			sourceTree = "<group>";
+		};
+		3301582E265840B5004DC0C6 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				330157E226582F65004DC0C6 /* ContentView.swift */,
+				3301582F2658415D004DC0C6 /* Signing.swift */,
+				3301583826584F9B004DC0C6 /* Chat.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		33015831265841B2004DC0C6 /* SupportingViews */ = {
+			isa = PBXGroup;
+			children = (
+				3301583226584455004DC0C6 /* CodeTextField.swift */,
+				3301583626584B7C004DC0C6 /* RoundButton.swift */,
+				3301583B2658503B004DC0C6 /* NavigationDrawer.swift */,
+			);
+			path = SupportingViews;
+			sourceTree = "<group>";
+		};
+		3301583A26585027004DC0C6 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				3301583D2658A357004DC0C6 /* ChatMembers.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		3301583F2658A42A004DC0C6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,13 +396,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3301583726584B7C004DC0C6 /* RoundButton.swift in Sources */,
 				3301582926583F52004DC0C6 /* NetworkHelper.swift in Sources */,
+				3301583C2658503B004DC0C6 /* NavigationDrawer.swift in Sources */,
+				3301583926584F9B004DC0C6 /* Chat.swift in Sources */,
 				330158172658324A004DC0C6 /* Store.swift in Sources */,
+				3301583326584455004DC0C6 /* CodeTextField.swift in Sources */,
 				33015821265835BD004DC0C6 /* DependencyInjector.swift in Sources */,
 				3301581D2658330E004DC0C6 /* SceneDelegate.swift in Sources */,
+				3301583E2658A357004DC0C6 /* ChatMembers.swift in Sources */,
 				33015815265831BD004DC0C6 /* SystemEventsHandler.swift in Sources */,
 				3301581926583270004DC0C6 /* CancelBag.swift in Sources */,
-				3301582726583C6F004DC0C6 /* HostingViewController.swift in Sources */,
 				3301581326583129004DC0C6 /* AppState.swift in Sources */,
 				33015823265835E6004DC0C6 /* InteractorContainer.swift in Sources */,
 				3301581B265832BB004DC0C6 /* AppDelegate.swift in Sources */,
@@ -360,7 +414,9 @@
 				3301582D26583FD4004DC0C6 /* ApiRepository.swift in Sources */,
 				3301581F265833E8004DC0C6 /* RootViewModifier.swift in Sources */,
 				3301582B26583FA1004DC0C6 /* ApiRequest.swift in Sources */,
+				3301583526584A4B004DC0C6 /* Extensions.swift in Sources */,
 				330158252658362C004DC0C6 /* AppEnvironment.swift in Sources */,
+				330158302658415D004DC0C6 /* Signing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
