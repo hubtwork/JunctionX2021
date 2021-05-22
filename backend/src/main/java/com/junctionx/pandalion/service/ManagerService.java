@@ -28,7 +28,6 @@ public class ManagerService {
             throw new RuntimeException("이미 가입되어 있는 유저입니다.");
         }
 
-        //빌더 패턴의 장점
         Authority authority = Authority.builder()
                 .authorityName("ROLE_USER")
                 .build();
