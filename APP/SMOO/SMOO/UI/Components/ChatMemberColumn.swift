@@ -14,7 +14,7 @@ struct ChatMemberColumn: View {
     var body: some View {
         HStack {
             Text(memberName)
-                .font(.custom("TypeFace", size: 20))
+                .font(.custom("ITC Avant Garde Gothic Bold", size: 20))
                 .foregroundColor(Color.smooGray)
             Spacer()
         }

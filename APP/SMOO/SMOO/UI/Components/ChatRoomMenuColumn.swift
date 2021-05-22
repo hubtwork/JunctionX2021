@@ -10,14 +10,24 @@ import SwiftUI
 struct ChatRoomMenuColumn: View {
     
     let isSelected: Binding<Bool>
+    
+    /// UI Components
     let title: String
     
     var body: some View {
-        Text(title)
-            .font(.custom("TypeFace", size: 20))
-            .bold()
-            .frame(width: 130, height: 50)
-            .border(Color.black)
+        VStack {
+            Text(title)
+                .font(.custom("ITC Avant Garde Gothic Bold", size: 17))
+                .bold()
+                .foregroundColor( isSelected.wrappedValue ? Color.smooGreen : Color.white)
+        }
+        .padding(.horizontal, 30)
+        .padding(.vertical, 10)
+        .background(Color.smooGray)
+        .overlay(Rectangle().frame(width: nil, height: 1, alignment: .top).foregroundColor(Color.white), alignment: .top)
+        .overlay(Rectangle().frame(width: 1, height: nil, alignment: .leading).foregroundColor(Color.white), alignment: .leading)
+        .overlay(Rectangle().frame(width: 1, height: nil, alignment: .trailing).foregroundColor(Color.white), alignment: .trailing)
+                
     }
 }
 
