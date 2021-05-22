@@ -2,6 +2,7 @@ package com.junctionx.pandalion.service;
 
 import com.junctionx.pandalion.network.dto.FileDto;
 import com.junctionx.pandalion.repository.FileRepository;
+import com.junctionx.pandalion.repository.ManagerRepository;
 import com.junctionx.pandalion.util.MD5Generator;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -10,7 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.util.Arrays;
-import java.util.stream.Collectors;
+import java.util.NoSuchElementException;
 
 import static java.util.stream.Collectors.toList;
 
@@ -21,7 +22,9 @@ public class FileService {
 
     private final FileRepository fileRepository;
 
-    public String uploadFile(MultipartFile[] files) {
+    private final ManagerRepository managerRepository;
+
+    public String uploadManagerFile(MultipartFile[] files, Long managerId) {
         Arrays.stream(files).map(file->{
 
             try {
@@ -46,7 +49,8 @@ public class FileService {
                 filedto.setOriginFileName(originFileName);
                 filedto.setServerFileName(fileName);
                 filedto.setFilePath(filePath);
-                saveFile(filedto);
+                filedto.setManagerId(managerId);
+                saveManagerFile(filedto);
 
             } catch(Exception e) {
                 e.toString();
@@ -55,14 +59,15 @@ public class FileService {
         })
                 .collect(toList());
 
-        return "file upload success";
+        return "success file upload!";
     }
 
-    private void saveFile(FileDto fileDto) {
+    private void saveManagerFile(FileDto fileDto) {
         com.junctionx.pandalion.domain.File build = com.junctionx.pandalion.domain.File.builder()
                 .serverFileName(fileDto.getServerFileName())
                 .originFileName(fileDto.getOriginFileName())
                 .filePath(fileDto.getFilePath())
+                .manager(managerRepository.findById(fileDto.getManagerId()).orElseThrow(NoSuchElementException::new))
                 .build();
 
         fileRepository.save(build);

@@ -28,13 +28,18 @@ public class User {
     @Column(name = "user_id")
     private Long id;
 
-    private String name;
+    private String username;
 
     private String code;
 
     private String location;
 
     private String phoneNumber;
+
+    private String workTp;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private File file;
 
     @CreatedBy
     private String createdBy;

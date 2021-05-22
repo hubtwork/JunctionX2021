@@ -36,6 +36,8 @@ public class Manager {
 
     private String nickname;
 
+    private String workTp;
+
     @JsonIgnore
     private String password;
 

@@ -27,8 +27,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public SecurityConfig(
             TokenProvider tokenProvider,
             CorsFilter corsFilter,
-                    JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint,
-            CorsFilter corsFilter1, JwtAccessDeniedHandler jwtAccessDeniedHandler
+            JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint,
+            JwtAccessDeniedHandler jwtAccessDeniedHandler
     ) {
         this.tokenProvider = tokenProvider;
         this.corsFilter = corsFilter;

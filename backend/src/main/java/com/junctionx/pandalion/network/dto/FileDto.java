@@ -16,4 +16,9 @@ public class FileDto {
     private String serverFileName;
 
     private String filePath;
+
+    private Long managerId;
+
+    private Long userId;
+
 }

@@ -30,7 +30,7 @@ public class UserApiController {
     public ResponseEntity<SmsResponseDto> sendSms(@PathVariable("id") Long id) throws URISyntaxException, NoSuchAlgorithmException, InvalidKeyException, JsonProcessingException {
 
         User user = userRepository.findById(id).orElseThrow(()-> new NoSuchElementException("User doesn't exist"));
-        return smsService.sendSms(user.getPhoneNumber(), user.getName() + "'s chatting room code : " + user.getCode());
+        return smsService.sendSms(user.getPhoneNumber(), user.getUsername() + "'s chatting room code : " + user.getCode());
     }
 
 }

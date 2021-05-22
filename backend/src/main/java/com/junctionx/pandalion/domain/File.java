@@ -11,6 +11,8 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -30,6 +32,14 @@ public class File {
     private String serverFileName;
 
     private String filePath;
+
+    private String workTp;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Manager manager;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private User user;
 
     @CreatedDate
     private LocalDateTime createdAt;
