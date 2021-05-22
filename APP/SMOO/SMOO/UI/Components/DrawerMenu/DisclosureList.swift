@@ -90,10 +90,10 @@ extension CollapsibleList {
 
 struct CollapsibleListSample: View {
     let members: [UserForColumn] = [
-        UserForColumn(userName: "kim", userProfileURL: "", isSpeaking: true, isEnabled: true),
-        UserForColumn(userName: "baek", userProfileURL: "", isSpeaking: false, isEnabled: true),
-        UserForColumn(userName: "lee", userProfileURL: "", isSpeaking: false, isEnabled: true),
-        UserForColumn(userName: "heo", userProfileURL: "", isSpeaking: false, isEnabled: false)
+        UserForColumn(userName: "kim", userProfileURL: "", userPosition: "Staff", isSpeaking: true, isEnabled: true),
+        UserForColumn(userName: "baek", userProfileURL: "", userPosition: "Manager", isSpeaking: false, isEnabled: true),
+        UserForColumn(userName: "lee", userProfileURL: "", userPosition: "Staff", isSpeaking: false, isEnabled: true),
+        UserForColumn(userName: "heo", userProfileURL: "", userPosition: "Staff", isSpeaking: false, isEnabled: false)
     ]
     
     let userList = UsersList.mocked

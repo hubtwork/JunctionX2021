@@ -17,6 +17,7 @@ struct User: Codable, Equatable {
     
     let userName: String
     let userProfileURL: String
+    let userPosition: String
     
     let isSpeaking: Bool
     let isEnabled: Bool
@@ -26,6 +27,7 @@ struct User: Codable, Equatable {
 struct UserForColumn: Codable, Equatable, Hashable {
     let userName: String
     let userProfileURL: String
+    let userPosition: String
     
     let isSpeaking: Bool
     let isEnabled: Bool
@@ -43,26 +45,26 @@ struct UsersList: Codable, Equatable {
         columns: [
             UserColumn(channelName: "Organizing Office",
                                          users: [
-                                            UserForColumn(userName: "kim changhyun", userProfileURL: "", isSpeaking: true, isEnabled: true),
-                                            UserForColumn(userName: "baek kimchi", userProfileURL: "", isSpeaking: false, isEnabled: true),
-                                            UserForColumn(userName: "lee jinsung", userProfileURL: "", isSpeaking: false, isEnabled: true),
-                                            UserForColumn(userName: "heo jae", userProfileURL: "", isSpeaking: false, isEnabled: false)
+                                            UserForColumn(userName: "kim changhyun", userProfileURL: "", userPosition: "Staff", isSpeaking: true, isEnabled: true),
+                                            UserForColumn(userName: "baek kimchi", userProfileURL: "", userPosition: "Manager", isSpeaking: false, isEnabled: true),
+                                            UserForColumn(userName: "lee jinsung", userProfileURL: "", userPosition: "Staff", isSpeaking: false, isEnabled: true),
+                                            UserForColumn(userName: "heo jae", userProfileURL: "", userPosition: "Staff", isSpeaking: false, isEnabled: false)
                                         ]),
             UserColumn(channelName: "10:30 Confference",
                                          users: [
-                                            UserForColumn(userName: "lee dohyun", userProfileURL: "", isSpeaking: false, isEnabled: true),
-                                            UserForColumn(userName: "lee kyungsup", userProfileURL: "", isSpeaking: false, isEnabled: true)
+                                            UserForColumn(userName: "lee dohyun", userProfileURL: "", userPosition: "Staff", isSpeaking: false, isEnabled: true),
+                                            UserForColumn(userName: "lee kyungsup", userProfileURL: "", userPosition: "Staff", isSpeaking: false, isEnabled: true)
                                         ]),
             UserColumn(channelName: "Attendance",
                                          users: [
-                                            UserForColumn(userName: "kim sungjin", userProfileURL: "", isSpeaking: false, isEnabled: true),
-                                            UserForColumn(userName: "baek minkyu", userProfileURL: "", isSpeaking: false, isEnabled: true),
-                                            UserForColumn(userName: "heo hyunjun", userProfileURL: "", isSpeaking: false, isEnabled: true),
-                                            UserForColumn(userName: "lee changsup", userProfileURL: "", isSpeaking: false, isEnabled: true),
-                                            UserForColumn(userName: "oh jaehyuk", userProfileURL: "", isSpeaking: false, isEnabled: true),
-                                            UserForColumn(userName: "lee kyungsup", userProfileURL: "", isSpeaking: false, isEnabled: true),
-                                            UserForColumn(userName: "chae hyunwook", userProfileURL: "", isSpeaking: false, isEnabled: true),
-                                            UserForColumn(userName: "micro soft", userProfileURL: "", isSpeaking: false, isEnabled: true)
+                                            UserForColumn(userName: "kim sungjin", userProfileURL: "", userPosition: "Manager", isSpeaking: false, isEnabled: true),
+                                            UserForColumn(userName: "baek minkyu", userProfileURL: "", userPosition: "Staff", isSpeaking: false, isEnabled: true),
+                                            UserForColumn(userName: "heo hyunjun", userProfileURL: "", userPosition: "Staff", isSpeaking: false, isEnabled: true),
+                                            UserForColumn(userName: "lee changsup", userProfileURL: "", userPosition: "Manager", isSpeaking: false, isEnabled: true),
+                                            UserForColumn(userName: "oh jaehyuk", userProfileURL: "", userPosition: "Staff", isSpeaking: false, isEnabled: true),
+                                            UserForColumn(userName: "lee kyungsup", userProfileURL: "", userPosition: "Staff", isSpeaking: false, isEnabled: true),
+                                            UserForColumn(userName: "chae hyunwook", userProfileURL: "", userPosition: "Staff", isSpeaking: false, isEnabled: true),
+                                            UserForColumn(userName: "micro soft", userProfileURL: "", userPosition: "Staff", isSpeaking: false, isEnabled: true)
                                         ])]
     )
 }

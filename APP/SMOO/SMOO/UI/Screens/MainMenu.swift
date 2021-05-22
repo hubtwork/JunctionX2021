@@ -78,6 +78,10 @@ extension MainMenu  {
                         .frame(width: 20, height: 20)
                 }.foregroundColor(Color.black)
                 Spacer()
+                
+                Image(systemName: "gearshape.fill")
+                    .resizable()
+                    .frame(width: 25, height: 25)
             }
             HStack {
                 Spacer()
@@ -88,7 +92,7 @@ extension MainMenu  {
                 
                 Spacer()
             }
-        }.padding(.leading, 20)
+        }.padding(.horizontal, 20)
         .padding(.bottom, 10)
     }
     

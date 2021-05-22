@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -41,6 +41,12 @@
 		3301585826590FDF004DC0C6 /* DriveMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3301585726590FDF004DC0C6 /* DriveMenuButton.swift */; };
 		3301585C26592406004DC0C6 /* USERS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3301585B26592406004DC0C6 /* USERS.swift */; };
 		3301585E26593EB6004DC0C6 /* DisclosureList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3301585D26593EB6004DC0C6 /* DisclosureList.swift */; };
+		3301586026596195004DC0C6 /* TextChatScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3301585F26596195004DC0C6 /* TextChatScreen.swift */; };
+		33015862265967EB004DC0C6 /* HintTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33015861265967EB004DC0C6 /* HintTextField.swift */; };
+		3301586426596F44004DC0C6 /* VoiceScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3301586326596F44004DC0C6 /* VoiceScreen.swift */; };
+		3301586726597055004DC0C6 /* VoiceMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3301586626597055004DC0C6 /* VoiceMenuCell.swift */; };
+		330158692659724F004DC0C6 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330158682659724F004DC0C6 /* CircleImageView.swift */; };
+		3301586C26597635004DC0C6 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 3301586B26597635004DC0C6 /* URLImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +107,11 @@
 		3301585726590FDF004DC0C6 /* DriveMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveMenuButton.swift; sourceTree = "<group>"; };
 		3301585B26592406004DC0C6 /* USERS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USERS.swift; sourceTree = "<group>"; };
 		3301585D26593EB6004DC0C6 /* DisclosureList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclosureList.swift; sourceTree = "<group>"; };
+		3301585F26596195004DC0C6 /* TextChatScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextChatScreen.swift; sourceTree = "<group>"; };
+		33015861265967EB004DC0C6 /* HintTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintTextField.swift; sourceTree = "<group>"; };
+		3301586326596F44004DC0C6 /* VoiceScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceScreen.swift; sourceTree = "<group>"; };
+		3301586626597055004DC0C6 /* VoiceMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceMenuCell.swift; sourceTree = "<group>"; };
+		330158682659724F004DC0C6 /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3301586C26597635004DC0C6 /* URLImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +269,8 @@
 				330158442658D1E9004DC0C6 /* MainMenu.swift */,
 				330157E226582F65004DC0C6 /* ContentView.swift */,
 				3301582F2658415D004DC0C6 /* Signing.swift */,
+				3301585F26596195004DC0C6 /* TextChatScreen.swift */,
+				3301586326596F44004DC0C6 /* VoiceScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -266,6 +280,8 @@
 			children = (
 				3301583226584455004DC0C6 /* CodeTextField.swift */,
 				3301583626584B7C004DC0C6 /* RoundButton.swift */,
+				33015861265967EB004DC0C6 /* HintTextField.swift */,
+				330158682659724F004DC0C6 /* CircleImageView.swift */,
 			);
 			path = SupportingViews;
 			sourceTree = "<group>";
@@ -273,6 +289,7 @@
 		3301583A26585027004DC0C6 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				3301586526597044004DC0C6 /* VoiceCommon */,
 				3301585A26591B2A004DC0C6 /* DrawerMenu */,
 				3301585926591AD0004DC0C6 /* ChatCommon */,
 				3301585626590FC8004DC0C6 /* Drive */,
@@ -350,6 +367,14 @@
 			path = DrawerMenu;
 			sourceTree = "<group>";
 		};
+		3301586526597044004DC0C6 /* VoiceCommon */ = {
+			isa = PBXGroup;
+			children = (
+				3301586626597055004DC0C6 /* VoiceMenuCell.swift */,
+			);
+			path = VoiceCommon;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -366,6 +391,9 @@
 			dependencies = (
 			);
 			name = SMOO;
+			packageProductDependencies = (
+				3301586B26597635004DC0C6 /* URLImage */,
+			);
 			productName = SMOO;
 			productReference = 330157DD26582F65004DC0C6 /* SMOO.app */;
 			productType = "com.apple.product-type.application";
@@ -437,6 +465,9 @@
 				Base,
 			);
 			mainGroup = 330157D426582F65004DC0C6;
+			packageReferences = (
+				3301586A26597635004DC0C6 /* XCRemoteSwiftPackageReference "url-image" */,
+			);
 			productRefGroup = 330157DE26582F65004DC0C6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -482,6 +513,8 @@
 			files = (
 				3301583726584B7C004DC0C6 /* RoundButton.swift in Sources */,
 				3301582926583F52004DC0C6 /* NetworkHelper.swift in Sources */,
+				3301586726597055004DC0C6 /* VoiceMenuCell.swift in Sources */,
+				3301586426596F44004DC0C6 /* VoiceScreen.swift in Sources */,
 				330158412658C2EC004DC0C6 /* ChatSection.swift in Sources */,
 				330158172658324A004DC0C6 /* Store.swift in Sources */,
 				3301583326584455004DC0C6 /* CodeTextField.swift in Sources */,
@@ -494,16 +527,19 @@
 				3301585C26592406004DC0C6 /* USERS.swift in Sources */,
 				3301581926583270004DC0C6 /* CancelBag.swift in Sources */,
 				3301581326583129004DC0C6 /* AppState.swift in Sources */,
+				3301586026596195004DC0C6 /* TextChatScreen.swift in Sources */,
 				33015823265835E6004DC0C6 /* InteractorContainer.swift in Sources */,
 				3301585E26593EB6004DC0C6 /* DisclosureList.swift in Sources */,
 				33015850265909EB004DC0C6 /* TextChatMenuButton.swift in Sources */,
 				3301581B265832BB004DC0C6 /* AppDelegate.swift in Sources */,
 				330158452658D1E9004DC0C6 /* MainMenu.swift in Sources */,
+				330158692659724F004DC0C6 /* CircleImageView.swift in Sources */,
 				330157E326582F65004DC0C6 /* ContentView.swift in Sources */,
 				3301582D26583FD4004DC0C6 /* ApiRepository.swift in Sources */,
 				330158432658CB9B004DC0C6 /* ChatMemberColumn.swift in Sources */,
 				3301584E2658F69D004DC0C6 /* TextChatCell.swift in Sources */,
 				3301581F265833E8004DC0C6 /* RootViewModifier.swift in Sources */,
+				33015862265967EB004DC0C6 /* HintTextField.swift in Sources */,
 				3301582B26583FA1004DC0C6 /* ApiRequest.swift in Sources */,
 				3301583526584A4B004DC0C6 /* Extensions.swift in Sources */,
 				3301585226590A10004DC0C6 /* VoiceChatMenuButton.swift in Sources */,
@@ -828,6 +864,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3301586A26597635004DC0C6 /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3301586B26597635004DC0C6 /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3301586A26597635004DC0C6 /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 330157D526582F65004DC0C6 /* Project object */;
 }
