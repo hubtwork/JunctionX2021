@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ThemeProvider } from 'styled-components';
 
-import media from './media';
+import styleUtil from './styleUtil';
 
 const Theme = ({ children }) => (
   <ThemeProvider
-    theme={{ primaryFont: 'Arial', primaryColor: '#666', ...media }}
+    theme={{ primaryFont: 'Arial', primaryColor: '#666', ...styleUtil }}
   >
     {children}
   </ThemeProvider>
