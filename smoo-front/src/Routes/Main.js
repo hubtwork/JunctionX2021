@@ -71,6 +71,7 @@ const SideBarTitle = styledComponent.span`
 function Main() {
   const [title, setTitle] = useState('2021 MS Conference');
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const [headerText, setHeaderText] = useState('');
 
   const handleClick = event => {
     setAnchorEl(event.currentTarget);
@@ -78,6 +79,10 @@ function Main() {
 
   const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  const changeHeader = text => {
+    setHeaderText(text);
   };
 
   return (
@@ -104,9 +109,9 @@ function Main() {
         {/* <SideBarTitleContainer>
           <SideBarTitle>{title}</SideBarTitle>
         </SideBarTitleContainer> */}
-        <ChannelListItems />
+        <ChannelListItems changeHeader={changeHeader} />
       </SideBar>
-      <TabPanel />
+      <TabPanel headerText={headerText} />
     </Container>
   );
 }
