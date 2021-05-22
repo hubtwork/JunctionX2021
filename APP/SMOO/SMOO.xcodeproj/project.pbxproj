@@ -33,10 +33,13 @@
 		3301583E2658A357004DC0C6 /* ChatMembers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3301583D2658A357004DC0C6 /* ChatMembers.swift */; };
 		330158412658C2EC004DC0C6 /* ChatSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330158402658C2EC004DC0C6 /* ChatSection.swift */; };
 		330158432658CB9B004DC0C6 /* ChatMemberColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330158422658CB9B004DC0C6 /* ChatMemberColumn.swift */; };
-		330158452658D1E9004DC0C6 /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330158442658D1E9004DC0C6 /* ChatRoom.swift */; };
-		330158472658D386004DC0C6 /* ChatRoomMenuColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330158462658D386004DC0C6 /* ChatRoomMenuColumn.swift */; };
+		330158452658D1E9004DC0C6 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330158442658D1E9004DC0C6 /* MainMenu.swift */; };
 		3301584A2658EAA3004DC0C6 /* ITC Avant Garde Gothic Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 330158492658E2A7004DC0C6 /* ITC Avant Garde Gothic Bold.otf */; };
 		3301584E2658F69D004DC0C6 /* TextChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3301584D2658F69D004DC0C6 /* TextChatCell.swift */; };
+		33015850265909EB004DC0C6 /* TextChatMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3301584F265909EB004DC0C6 /* TextChatMenuButton.swift */; };
+		3301585226590A10004DC0C6 /* VoiceChatMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3301585126590A10004DC0C6 /* VoiceChatMenuButton.swift */; };
+		3301585526590D88004DC0C6 /* MapMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3301585426590D88004DC0C6 /* MapMenuButton.swift */; };
+		3301585826590FDF004DC0C6 /* DriveMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3301585726590FDF004DC0C6 /* DriveMenuButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,10 +92,13 @@
 		3301583D2658A357004DC0C6 /* ChatMembers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMembers.swift; sourceTree = "<group>"; };
 		330158402658C2EC004DC0C6 /* ChatSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatSection.swift; sourceTree = "<group>"; };
 		330158422658CB9B004DC0C6 /* ChatMemberColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMemberColumn.swift; sourceTree = "<group>"; };
-		330158442658D1E9004DC0C6 /* ChatRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
-		330158462658D386004DC0C6 /* ChatRoomMenuColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomMenuColumn.swift; sourceTree = "<group>"; };
+		330158442658D1E9004DC0C6 /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		330158492658E2A7004DC0C6 /* ITC Avant Garde Gothic Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ITC Avant Garde Gothic Bold.otf"; sourceTree = "<group>"; };
 		3301584D2658F69D004DC0C6 /* TextChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextChatCell.swift; sourceTree = "<group>"; };
+		3301584F265909EB004DC0C6 /* TextChatMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextChatMenuButton.swift; sourceTree = "<group>"; };
+		3301585126590A10004DC0C6 /* VoiceChatMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceChatMenuButton.swift; sourceTree = "<group>"; };
+		3301585426590D88004DC0C6 /* MapMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMenuButton.swift; sourceTree = "<group>"; };
+		3301585726590FDF004DC0C6 /* DriveMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveMenuButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,13 +271,15 @@
 		3301583A26585027004DC0C6 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				3301585926591AD0004DC0C6 /* ChatCommon */,
+				3301585626590FC8004DC0C6 /* Drive */,
+				3301585326590D78004DC0C6 /* Map */,
 				3301584C2658F692004DC0C6 /* TextChat */,
 				3301584B2658F68C004DC0C6 /* VoiceChat */,
 				3301583D2658A357004DC0C6 /* ChatMembers.swift */,
 				330158402658C2EC004DC0C6 /* ChatSection.swift */,
 				330158422658CB9B004DC0C6 /* ChatMemberColumn.swift */,
-				330158442658D1E9004DC0C6 /* ChatRoom.swift */,
-				330158462658D386004DC0C6 /* ChatRoomMenuColumn.swift */,
+				330158442658D1E9004DC0C6 /* MainMenu.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -294,6 +302,7 @@
 		3301584B2658F68C004DC0C6 /* VoiceChat */ = {
 			isa = PBXGroup;
 			children = (
+				3301585126590A10004DC0C6 /* VoiceChatMenuButton.swift */,
 			);
 			path = VoiceChat;
 			sourceTree = "<group>";
@@ -302,8 +311,32 @@
 			isa = PBXGroup;
 			children = (
 				3301584D2658F69D004DC0C6 /* TextChatCell.swift */,
+				3301584F265909EB004DC0C6 /* TextChatMenuButton.swift */,
 			);
 			path = TextChat;
+			sourceTree = "<group>";
+		};
+		3301585326590D78004DC0C6 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				3301585426590D88004DC0C6 /* MapMenuButton.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		3301585626590FC8004DC0C6 /* Drive */ = {
+			isa = PBXGroup;
+			children = (
+				3301585726590FDF004DC0C6 /* DriveMenuButton.swift */,
+			);
+			path = Drive;
+			sourceTree = "<group>";
+		};
+		3301585926591AD0004DC0C6 /* ChatCommon */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ChatCommon;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -444,13 +477,16 @@
 				3301583326584455004DC0C6 /* CodeTextField.swift in Sources */,
 				33015821265835BD004DC0C6 /* DependencyInjector.swift in Sources */,
 				3301581D2658330E004DC0C6 /* SceneDelegate.swift in Sources */,
+				3301585826590FDF004DC0C6 /* DriveMenuButton.swift in Sources */,
 				3301583E2658A357004DC0C6 /* ChatMembers.swift in Sources */,
+				3301585526590D88004DC0C6 /* MapMenuButton.swift in Sources */,
 				33015815265831BD004DC0C6 /* SystemEventsHandler.swift in Sources */,
 				3301581926583270004DC0C6 /* CancelBag.swift in Sources */,
 				3301581326583129004DC0C6 /* AppState.swift in Sources */,
 				33015823265835E6004DC0C6 /* InteractorContainer.swift in Sources */,
+				33015850265909EB004DC0C6 /* TextChatMenuButton.swift in Sources */,
 				3301581B265832BB004DC0C6 /* AppDelegate.swift in Sources */,
-				330158452658D1E9004DC0C6 /* ChatRoom.swift in Sources */,
+				330158452658D1E9004DC0C6 /* MainMenu.swift in Sources */,
 				330157E326582F65004DC0C6 /* ContentView.swift in Sources */,
 				3301582D26583FD4004DC0C6 /* ApiRepository.swift in Sources */,
 				330158432658CB9B004DC0C6 /* ChatMemberColumn.swift in Sources */,
@@ -458,9 +494,9 @@
 				3301581F265833E8004DC0C6 /* RootViewModifier.swift in Sources */,
 				3301582B26583FA1004DC0C6 /* ApiRequest.swift in Sources */,
 				3301583526584A4B004DC0C6 /* Extensions.swift in Sources */,
+				3301585226590A10004DC0C6 /* VoiceChatMenuButton.swift in Sources */,
 				330158252658362C004DC0C6 /* AppEnvironment.swift in Sources */,
 				330158302658415D004DC0C6 /* Signing.swift in Sources */,
-				330158472658D386004DC0C6 /* ChatRoomMenuColumn.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

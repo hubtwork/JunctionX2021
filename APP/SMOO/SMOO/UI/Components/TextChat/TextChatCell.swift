@@ -9,8 +9,29 @@ import SwiftUI
 
 struct TextChatCell: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        content
     }
+}
+
+extension TextChatCell {
+    
+    var content: some View {
+        HStack {
+            profileImage
+        }
+    }
+    
+    var profileImage: some View {
+        Image("shin02")
+            .resizable()
+            .scaledToFill()
+            .frame(width: 74, height: 74)
+    }
+    
+    var profileName: some View {
+        Text("profileName")
+    }
+    
 }
 
 struct TextChatCell_Previews: PreviewProvider {
