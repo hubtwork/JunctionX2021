@@ -14,15 +14,15 @@ const Container = styledComponent.div`
 
 const SideBar = styledComponent.div`
   width: 100%;
-  max-width: 400px;
-  height: 100vh;
+  max-width: 320px;
+  height: 100%;
+  min-height: 100vh;
   background-color: #454545;
   text-align: center;
 `;
 
 const CustomButton = styled(Button)({
-  width: '100%',
-  minWidth: '400px',
+  width: '320px',
   height: '7rem',
   fontSize: '2.5rem',
   fontWeight: 'bold',
@@ -30,6 +30,7 @@ const CustomButton = styled(Button)({
   position: 'relative',
   wordBreak: 'keep-all',
   margin: '0',
+  padding: '0',
 });
 
 const StyledMenu = withStyles({
