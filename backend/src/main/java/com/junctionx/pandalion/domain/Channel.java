@@ -48,4 +48,11 @@ public class Channel {
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Group group;
+
+    @OneToOne(mappedBy = "channel", fetch = FetchType.LAZY)
+    private File file;
+
+    @OneToOne(mappedBy = "channel", fetch = FetchType.LAZY)
+    private Chatting chatting;
+
 }
