@@ -47,6 +47,7 @@
 		3301586726597055004DC0C6 /* VoiceMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3301586626597055004DC0C6 /* VoiceMenuCell.swift */; };
 		330158692659724F004DC0C6 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330158682659724F004DC0C6 /* CircleImageView.swift */; };
 		3301586C26597635004DC0C6 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 3301586B26597635004DC0C6 /* URLImage */; };
+		3398A9EB265990F60056A7AE /* MapScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3398A9EA265990F60056A7AE /* MapScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +113,7 @@
 		3301586326596F44004DC0C6 /* VoiceScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceScreen.swift; sourceTree = "<group>"; };
 		3301586626597055004DC0C6 /* VoiceMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceMenuCell.swift; sourceTree = "<group>"; };
 		330158682659724F004DC0C6 /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
+		3398A9EA265990F60056A7AE /* MapScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -271,6 +273,7 @@
 				3301582F2658415D004DC0C6 /* Signing.swift */,
 				3301585F26596195004DC0C6 /* TextChatScreen.swift */,
 				3301586326596F44004DC0C6 /* VoiceScreen.swift */,
+				3398A9EA265990F60056A7AE /* MapScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 				330158452658D1E9004DC0C6 /* MainMenu.swift in Sources */,
 				330158692659724F004DC0C6 /* CircleImageView.swift in Sources */,
 				330157E326582F65004DC0C6 /* ContentView.swift in Sources */,
+				3398A9EB265990F60056A7AE /* MapScreen.swift in Sources */,
 				3301582D26583FD4004DC0C6 /* ApiRepository.swift in Sources */,
 				330158432658CB9B004DC0C6 /* ChatMemberColumn.swift in Sources */,
 				3301584E2658F69D004DC0C6 /* TextChatCell.swift in Sources */,

@@ -9,7 +9,10 @@ import SwiftUI
 
 struct MainMenu: View {
     
+    @Environment(\.injected) private var injected: DIContainer
     @State var isDrawerOpen: Bool = false
+    
+    
     
     let eventTitle: String
     
@@ -32,7 +35,10 @@ struct MainMenu: View {
     @State private var gpsOn: Bool = true
     
     var body: some View {
-        content
+        NavigationView {
+            content
+                .navigationBarHidden(true)
+        }
         
     }
 }
@@ -101,11 +107,11 @@ extension MainMenu  {
             VStack(spacing: 20) {
                 VStack{}.frame(height: 10)
                 
-                Button(action: { voiceStable.toggle() }) {
+                NavigationLink(destination: VoiceScreen(users: userList.columns[0].users)) {
                     VoiceChatMenuButton(isOn: $voiceStable, topicCount: voiceTopicCount)
                         .frame(height: UIScreen.screenHeight * 0.2)
                 }
-                Button(action: { print("")}) {
+                NavigationLink(destination: TextChatScreen(userCount: 4)) {
                     TextChatMenuButton(hasNewContent: $textHasNewContent, topicCount: chatTopicCount)
                         .frame(height: UIScreen.screenHeight * 0.2)
                 }
@@ -130,7 +136,7 @@ extension MainMenu  {
 
 struct MainMenu_Previews: PreviewProvider {
     static var previews: some View {
-        MainMenu(eventTitle: "JUNCTION X Seoul", userList: UsersList.mocked)
+        MainMenu(eventTitle: "JUNCTION X Seoul", userList: UsersList.mocked).inject(AppEnvironment.bootstrap().container)
             .previewDevice("iPhone 12")
     }
 }

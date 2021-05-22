@@ -9,12 +9,16 @@ import SwiftUI
 
 struct VoiceScreen: View {
     
+    @Environment(\.injected) private var injected: DIContainer
+    @Environment(\.presentationMode) var presentation
+    
     let users: [UserForColumn]
     
     @State private var inputText: String = ""
     
     var body: some View {
         content
+            .navigationBarHidden(true)
     }
     
 }
@@ -79,15 +83,16 @@ extension VoiceScreen {
     
     var titleBar: some View {
         HStack(spacing: 5){
-            Image(systemName: "chevron.backward")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 20, height: 20)
-                
-            Text("Voice")
-                .font(.custom("ITC Avant Garde Gothic Bold", size: 20))
-                .foregroundColor(Color.black)
-            
+            Button(action: { presentation.wrappedValue.dismiss() }) {
+                Image(systemName: "chevron.backward")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 20, height: 20)
+                    
+                Text("Voice")
+                    .font(.custom("ITC Avant Garde Gothic Bold", size: 20))
+                    .foregroundColor(Color.black)
+            }.foregroundColor(Color.black)
             Spacer()
             
             Image(systemName: "person.fill")

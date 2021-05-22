@@ -41,10 +41,20 @@ extension Signing {
                     .frame(width: 200, height: 55)
                     .padding(.top, 40)
                 
-                CodeTextField(text: $code,
-                              fontSize: 20,
-                              bgColor: Color.white)
-                    .frame(height: 30)
+                HStack(spacing: 10) {
+                    CodeTextField(text: $code,
+                                  fontSize: 20,
+                                  bgColor: Color.white)
+                        .frame(height: 30)
+                    Button(action: {
+                            signIn(registrationCode: code)
+                    }) {
+                        Image(systemName: "arrow.right.circle")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 30, height: 30)
+                    }.foregroundColor(Color.black)
+                }
                     .padding(.bottom, 40)
             }
             .padding()
@@ -72,6 +82,16 @@ extension Signing {
     }
     
 }
+
+// MARK:- Side Effects
+extension Signing {
+    
+    func signIn(registrationCode: String) {
+        injected.appState[\.system.isSigned] = true
+    }
+    
+}
+
 
 struct Signing_Previews: PreviewProvider {
     static var previews: some View {

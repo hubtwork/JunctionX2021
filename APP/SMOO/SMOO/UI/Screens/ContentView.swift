@@ -6,24 +6,37 @@
 //
 
 import SwiftUI
+import Combine
 
 struct ContentView: View {
     
-    
     private let container: DIContainer
+    @State private var isSigned: Bool = false
     
     init(container: DIContainer) {
         self.container = container
     }
     
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        ZStack {
+            if isSigned {
+                MainMenu(eventTitle: "JUNCTION X Seoul", userList: UsersList.mocked)
+                    .inject(container)
+            } else {
+                Signing()
+                    .inject(container)
+            }
+        }.onReceive(signInStateUpdate) { self.isSigned = $0 }
+    }
+    
+    private var signInStateUpdate: AnyPublisher<Bool, Never> {
+        container.appState.updates(for: \.system.isSigned)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(container: .preview)
+        ContentView(container: AppEnvironment.bootstrap().container)
+            .previewDevice("iPhone 12")
     }
 }

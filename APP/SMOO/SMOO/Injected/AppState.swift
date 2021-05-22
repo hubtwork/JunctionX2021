@@ -31,6 +31,8 @@ extension AppState {
 extension AppState {
     struct System: Equatable {
         var isActive: Bool = true
+        
+        var isSigned: Bool = false
     }
 }
 

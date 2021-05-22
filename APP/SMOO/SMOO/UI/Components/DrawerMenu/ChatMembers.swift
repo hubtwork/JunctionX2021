@@ -14,6 +14,8 @@ struct ChatMembers: View {
     let groupName: String
     let userList: UsersList
     
+    
+    
     var body: some View {
         self.content
     }
@@ -44,12 +46,13 @@ extension ChatMembers {
             
             Spacer()
         }
+
     }
     
     var chatRoom: some View {
         ScrollView {
             VStack(spacing: 0) {
-                ForEach(userList.columns, id: \.self) { channel in
+                ForEach(Array(zip(userList.columns.indices, userList.columns)), id: \.0) { index, channel in
                     CollapsibleList(channelName: channel.channelName, members: channel.users)
                 }
             }
