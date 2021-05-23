@@ -22,5 +22,7 @@ public class ChattingResponse {
 
     private boolean self;
 
+    private Integer unreadCount;
+
     private ChattingUserResponse chattingUserResponse;
 }

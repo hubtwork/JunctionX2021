@@ -92,6 +92,7 @@ public class ManagerService {
                 chattingResponse.setText(channel.getChatting().getText());
                 chattingResponse.setSelf(channel.getChatting().isSelf());
                 chattingResponse.setRegisteredTime(channel.getChatting().getRegisteredTime());
+                chattingResponse.setUnreadCount(channel.getChatting().getUnreadCount());
 
                 ChattingUserResponse chattingUserResponse = new ChattingUserResponse();
                 chattingUserResponse.setUsername(channel.getChatting().getUser().getUsername());

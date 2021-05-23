@@ -60,7 +60,6 @@ public class ManagerApiController {
 
     @GetMapping("/forweb")
     public ForWebResponse forweb(){
-
         return managerService.forweb();
     }
 

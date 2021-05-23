@@ -26,6 +26,8 @@ public class Chatting {
 
     private boolean self;
 
+    private Integer unreadCount;
+
     private String registeredTime;
 
     @ManyToOne(fetch = FetchType.LAZY)
