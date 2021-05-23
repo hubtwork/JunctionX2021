@@ -31,7 +31,7 @@ const Folder = styled.span`
 const ChannelListContainer = styled.nav`
   background-color: #454545;
   display: flex;
-  transition: height 0.5s linear;
+  transition: height 0.3s linear;
   height: ${props => (props.open ? '100%' : 0)};
 `;
 
@@ -39,7 +39,7 @@ const ChannelList = styled.ul`
   display: flex;
   flex-direction: column;
   height: ${props => (props.open ? '100%' : 0)};
-  transition: height 0.5s linear;
+  transition: height 0.3s linear;
 `;
 
 const ChannelItem = styled.li`
@@ -48,7 +48,7 @@ const ChannelItem = styled.li`
   opacity: ${props => (props.open ? 1 : 0)};
   transform: ${props =>
     props.open ? 'translateY(20px)' : 'translatyeY(-20px)'};
-  transition: transform 0.6s linear, opacity 0.6s linear;
+  transition: transform 0.3s linear, opacity 0.4s linear;
 `;
 
 const ChannelLink = styled.a`

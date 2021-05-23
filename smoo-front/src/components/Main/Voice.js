@@ -6,7 +6,6 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
-
   flex-wrap: wrap;
 `;
 
@@ -69,7 +68,7 @@ function Voice() {
             <span>이름</span>
           </Position>
         </UserInfo>
-        <Profile src={defaultProfile} />
+        <Profile src={defaultProfile} alt="" />
       </Card>
     </Container>
   );

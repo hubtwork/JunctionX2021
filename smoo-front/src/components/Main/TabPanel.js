@@ -9,6 +9,7 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Voice from './Voice';
+import Chat from './Chat';
 
 import logo from '../../assets/logo.png';
 
@@ -50,6 +51,11 @@ const Header = styledComponent.div`
   font-size: 24px;
   visibility: ${props =>
     props.value !== 4 || props.value !== 0 ? 'visible' : 'none'}
+`;
+
+const InsideContainer = styledComponent.div`
+    width: 100%;
+    height: calc(100% - 14rem);
 `;
 
 function TabPanel(props) {
@@ -153,21 +159,23 @@ export default function NavTabs({ headerText }) {
       ) : (
         <>
           <Header value={value}>{headerText}</Header>
-          <TabPanel style={{ display: 'none' }} value={value} index={0}>
-            Page Hidden
-          </TabPanel>
-          <TabPanel value={value} index={1}>
-            <Voice />
-          </TabPanel>
-          <TabPanel value={value} index={2}>
-            Chat
-          </TabPanel>
-          <TabPanel value={value} index={3}>
-            Drive
-          </TabPanel>
-          <TabPanel value={value} index={4}>
-            Map
-          </TabPanel>
+          <InsideContainer>
+            <TabPanel style={{ display: 'none' }} value={value} index={0}>
+              Page Hidden
+            </TabPanel>
+            <TabPanel value={value} index={1}>
+              <Voice />
+            </TabPanel>
+            <TabPanel value={value} index={2}>
+              <Chat />
+            </TabPanel>
+            <TabPanel value={value} index={3}>
+              Drive
+            </TabPanel>
+            <TabPanel value={value} index={4}>
+              Map
+            </TabPanel>
+          </InsideContainer>
         </>
       )}
     </div>
