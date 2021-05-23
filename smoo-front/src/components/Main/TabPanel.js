@@ -10,6 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Voice from './Voice';
 import Chat from './Chat';
+import Drive from './Drive';
 
 import logo from '../../assets/logo.png';
 
@@ -170,7 +171,7 @@ export default function NavTabs({ headerText }) {
               <Chat />
             </TabPanel>
             <TabPanel value={value} index={3}>
-              Drive
+              <Drive />
             </TabPanel>
             <TabPanel value={value} index={4}>
               Map

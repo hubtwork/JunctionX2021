@@ -21,19 +21,23 @@ const GlobalStyles = createGlobalStyle`
         /* font-family: 'NanumSquare', sans-serif;  */
 
     @font-face {
-        font-family: 'ITC Avant Garde Gothic Bold';
+        font-family: ITC Avant Garde Gothic Bold;
         src: url("../assets/fonts/ITC Avant Garde Gothic Bold.otf") format("opentype");
     }
     @font-face {
-        font-family: 'ITC Avant Garde Gothic Bold';
+        font-family: ITC Avant Garde Gothic Bold;
         font-weight: bold;
         src: url("../assets/fonts/ITC Avant Garde Gothic Bold.otf") format("opentype");
     }
     @font-face {
-    font-family: 'ITC Avant Garde Gothic Bold';
-    src: url("../assets/fonts/AvantGarde-Bold.woff2") format("woff"), url("../assets/fonts/AvantGarde-Bold.ttf") format("truetype");
-}
-
+        font-family: ITC Avant Garde Gothic Bold;
+        src: url("../assets/fonts/AvantGarde-Bold.woff2") format("woff"), url("../assets/fonts/AvantGarde-Bold.ttf") format("truetype");
+    }
+    @font-face {
+        font-family: ITC Avant Garde Gothic Bold;
+        font-weight: bold;
+        src: url("../assets/fonts/AvantGarde-Bold.woff2") format("woff"), url("../assets/fonts/AvantGarde-Bold.ttf") format("truetype");
+    }
   }
   a{
         text-decoration:none;
