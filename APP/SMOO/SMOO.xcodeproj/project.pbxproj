@@ -52,7 +52,7 @@
 		332FA4A82659967F000319BE /* MAP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332FA4A72659967F000319BE /* MAP.swift */; };
 		332FA4AA26599D33000319BE /* SmooMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332FA4A926599D33000319BE /* SmooMarker.swift */; };
 		332FA4AC2659A64D000319BE /* MapkitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332FA4AB2659A64D000319BE /* MapkitView.swift */; };
-		332FA4AE2659A83B000319BE /* CHAT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332FA4AD2659A83B000319BE /* CHAT.swift */; };
+		332FA4AE2659A83B000319BE /* CHAT & DRIVE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332FA4AD2659A83B000319BE /* CHAT & DRIVE.swift */; };
 		332FA4B02659E68A000319BE /* WebRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332FA4AF2659E68A000319BE /* WebRepository.swift */; };
 		332FA4B22659FFDC000319BE /* RoundedCornerShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332FA4B12659FFDC000319BE /* RoundedCornerShape.swift */; };
 		3398A9EB265990F60056A7AE /* MapScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3398A9EA265990F60056A7AE /* MapScreen.swift */; };
@@ -127,7 +127,7 @@
 		332FA4A72659967F000319BE /* MAP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAP.swift; sourceTree = "<group>"; };
 		332FA4A926599D33000319BE /* SmooMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmooMarker.swift; sourceTree = "<group>"; };
 		332FA4AB2659A64D000319BE /* MapkitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapkitView.swift; sourceTree = "<group>"; };
-		332FA4AD2659A83B000319BE /* CHAT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CHAT.swift; sourceTree = "<group>"; };
+		332FA4AD2659A83B000319BE /* CHAT & DRIVE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CHAT & DRIVE.swift"; sourceTree = "<group>"; };
 		332FA4AF2659E68A000319BE /* WebRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRepository.swift; sourceTree = "<group>"; };
 		332FA4B12659FFDC000319BE /* RoundedCornerShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerShape.swift; sourceTree = "<group>"; };
 		3398A9EA265990F60056A7AE /* MapScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreen.swift; sourceTree = "<group>"; };
@@ -354,7 +354,7 @@
 			children = (
 				3301585B26592406004DC0C6 /* USERS.swift */,
 				332FA4A72659967F000319BE /* MAP.swift */,
-				332FA4AD2659A83B000319BE /* CHAT.swift */,
+				332FA4AD2659A83B000319BE /* CHAT & DRIVE.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -713,7 +713,7 @@
 				330157E326582F65004DC0C6 /* ContentView.swift in Sources */,
 				3398A9EB265990F60056A7AE /* MapScreen.swift in Sources */,
 				3301582D26583FD4004DC0C6 /* ApiRepository.swift in Sources */,
-				332FA4AE2659A83B000319BE /* CHAT.swift in Sources */,
+				332FA4AE2659A83B000319BE /* CHAT & DRIVE.swift in Sources */,
 				330158432658CB9B004DC0C6 /* ChatMemberColumn.swift in Sources */,
 				3301584E2658F69D004DC0C6 /* TextChatCell.swift in Sources */,
 				3301581F265833E8004DC0C6 /* RootViewModifier.swift in Sources */,
