@@ -3,6 +3,7 @@ package com.junctionx.pandalion;
 import com.junctionx.pandalion.domain.Chatting;
 import com.junctionx.pandalion.domain.UserGroupChannel;
 import com.junctionx.pandalion.repository.ChannelRepository;
+import com.junctionx.pandalion.repository.ChattingRepository;
 import com.junctionx.pandalion.repository.UserGroupChannelRepository;
 import com.junctionx.pandalion.repository.UserRepository;
 import org.junit.jupiter.api.Test;
@@ -20,6 +21,9 @@ public class ChattingRepositoryTest extends PandalionApplicationTests{
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private ChattingRepository chattingRepository;
 
 
     @Test
@@ -40,20 +44,26 @@ public class ChattingRepositoryTest extends PandalionApplicationTests{
         time[5] = "2021.05.23 10:10";
 
         List<UserGroupChannel> all = userGroupChannelRepository.findAll();
-        all.forEach(a->{
-            int cnt = 0;
-            if (a.getChannelId() == 12){
+        int cnt = 0;
+        for (UserGroupChannel userGroupChannel : all) {
+            if (userGroupChannel.getChannelId() == 12L){
                 Chatting chatting = Chatting.builder()
                         .channel(channelRepository.getOne(12L))
                         .text(text[cnt])
-                        //.registeredTime(time[cnt])
-                        //.user(userRepository.getOne(a.getUserId())
-                        //.
+                        .registeredTime(time[cnt])
+                        .user(userRepository.getOne(userGroupChannel.getUserId()))
+                        .self(false)
                         .build();
+
+                chattingRepository.save(chatting);
+                cnt += 1;
+                if (cnt == 6){
+                    break;
+                }
             }
 
-        });
 
+        }
 
 
     }

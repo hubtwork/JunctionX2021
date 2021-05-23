@@ -28,23 +28,23 @@ public class File {
 
     private String registeredTime;
 
-    private String originFileName;
+    private String originFileName; // 2021-junctionx-conference.pdf
 
-    private String serverFileName;
+    private String serverFileName; //X
 
-    private String filePath;
+    private String filePath; //x
 
-    private String capacity;
+    private String capacity; // 0.8MB
 
-    private String auth;
+    private String auth; // "매니 저 이상"
 
-    private String type;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Manager manager;
+    private String type; // pdf
 
     @ManyToOne(fetch = FetchType.LAZY)
-    private User user;
+    private Manager manager; //
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private User user; //
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "channel_id")
