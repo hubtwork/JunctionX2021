@@ -12,8 +12,6 @@ struct MainMenu: View {
     @Environment(\.injected) private var injected: DIContainer
     @State var isDrawerOpen: Bool = false
     
-    
-    
     let eventTitle: String
     
     /// Current Chat Channel Members
@@ -21,7 +19,6 @@ struct MainMenu: View {
     
     /// Voice
     @State private var voiceStable: Bool = true
-    let voiceTopicCount: Int = 17
     
     /// TextChat
     @State private var textHasNewContent: Bool = false
@@ -66,7 +63,7 @@ extension MainMenu  {
                     .animation(.easeInOut)
                 }
             }
-            ChatMembers(isOpen: $isDrawerOpen, groupName: "Junction X", userList: userList)
+            ChatMembers(user: UserForColumn(userName: "micro soft", userProfileURL: "", userPosition: "Staff", isSpeaking: false, isEnabled: true), isOpen: $isDrawerOpen, groupName: "Junction X", userList: userList)
                 .offset(x: isDrawerOpen ? 0: -300)
         }
     }
@@ -84,17 +81,14 @@ extension MainMenu  {
                         .frame(width: 20, height: 20)
                 }.foregroundColor(Color.black)
                 Spacer()
-                
-                Image(systemName: "gearshape.fill")
-                    .resizable()
-                    .frame(width: 25, height: 25)
             }
             HStack {
                 Spacer()
                 
-                Image("logo")
-                    .resizable()
-                    .frame(width: 130, height: 37)
+                Text(eventTitle)
+                    .font(.custom("ITC Avant Garde Gothic Bold", size: 24))
+                    .bold()
+                    .foregroundColor(Color.smooGray)
                 
                 Spacer()
             }
@@ -108,7 +102,7 @@ extension MainMenu  {
                 VStack{}.frame(height: 10)
                 
                 NavigationLink(destination: VoiceScreen(users: userList.columns[2].users)) {
-                    VoiceChatMenuButton(isOn: $voiceStable, topicCount: voiceTopicCount)
+                    VoiceChatMenuButton(isOn: $voiceStable)
                         .frame(height: UIScreen.screenHeight * 0.2)
                 }
                 NavigationLink(destination: TextChatScreen(userCount: 4)) {
@@ -136,7 +130,7 @@ extension MainMenu  {
 
 struct MainMenu_Previews: PreviewProvider {
     static var previews: some View {
-        MainMenu(eventTitle: "JUNCTION X Seoul", userList: UsersList.mocked).inject(AppEnvironment.bootstrap().container)
+        MainMenu(eventTitle: "2021 MS Conference", userList: UsersList.mocked).inject(AppEnvironment.bootstrap().container)
             .previewDevice("iPhone 12")
     }
 }

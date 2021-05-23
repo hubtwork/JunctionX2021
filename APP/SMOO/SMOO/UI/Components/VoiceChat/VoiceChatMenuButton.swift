@@ -12,9 +12,6 @@ struct VoiceChatMenuButton: View {
     /// On / Off Count
     let isOn: Binding<Bool>
     
-    /// Topic Components
-    let topicCount: Int
-    
     var body: some View {
         GeometryReader { geometry in
             ZStack {
@@ -22,8 +19,6 @@ struct VoiceChatMenuButton: View {
                 OnOffWrapper
                 
                 TitleWrapper
-                
-                TopicWrapper
             }
             .frame(width: geometry.size.width,
                    height: geometry.size.height)
@@ -65,14 +60,6 @@ struct VoiceChatMenuButton: View {
         .padding(.bottom, 37)
     }
     
-    var TopicWrapper: some View {
-        VStack {
-            Spacer()
-            topicText
-        }.padding(.leading, 25)
-        .padding(.bottom, 20)
-    }
-    
     var menuText: some View {
         HStack {
             Text("Voice")
@@ -82,18 +69,11 @@ struct VoiceChatMenuButton: View {
             Spacer()
         }
     }
-    var topicText: some View {
-        HStack {
-            Text("\(topicCount) topics")
-                .font(.system(size: 15))
-                .foregroundColor(Color.white)
-            Spacer()
-        }
-    }
+    
 }
 
 struct VoiceChatMenuButton_Previews: PreviewProvider {
     static var previews: some View {
-        VoiceChatMenuButton(isOn: .constant(false), topicCount: 10)
+        VoiceChatMenuButton(isOn: .constant(false))
     }
 }

@@ -20,7 +20,7 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             if isSigned {
-                MainMenu(eventTitle: "JUNCTION X Seoul", userList: UsersList.mocked)
+                MainMenu(eventTitle: "2021 MS Conference", userList: UsersList.mocked)
                     .inject(container)
             } else {
                 Signing()

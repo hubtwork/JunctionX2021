@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct ChatMembers: View {
-    
+
+    let user: UserForColumn
+
     let isOpen: Binding<Bool>
     
     let groupName: String
@@ -28,13 +30,13 @@ extension ChatMembers {
             /// Drawer Menu
             VStack (spacing: 20){
                 
-                Text(groupName)
-                    .font(.custom("ITC Avant Garde Gothic Bold", size: 25))
-                    .bold()
-                    .foregroundColor(Color.smooGreen)
+                Image("logo_greenx2")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 150)
                 
                 self.chatRoom
-                    .padding(.leading, 5)
+                    .padding(.leading, 15)
                 
             }.padding(.top, 50)
             .frame(width: 300,
@@ -56,11 +58,10 @@ extension ChatMembers {
                     CollapsibleList(channelName: channel.channelName, members: channel.users)
                 }
             }
-        }.background(Color.smooGray)
-        .onAppear {
-            UITableView.appearance().separatorStyle = .none
-        }
+        }.padding(.bottom, 120)
+        .background(Color.smooGray)
     }
+    
 
 }
 
@@ -71,7 +72,7 @@ struct ChatMembersSample: View {
     
     var body: some View {
         ZStack {
-            ChatMembers(isOpen: $isOpen, groupName: "Junction X", userList: userList)
+            ChatMembers(user: UserForColumn(userName: "micro soft", userProfileURL: "https://i.imgur.com/jHOXkpc.png", userPosition: "Staff", isSpeaking: false, isEnabled: true), isOpen: $isOpen, groupName: "2021 MS Conference", userList: userList)
         }
     }
 }

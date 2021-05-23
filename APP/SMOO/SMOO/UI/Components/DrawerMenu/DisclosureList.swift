@@ -19,18 +19,16 @@ struct DrawerUserCell: View {
                     .frame(width: 20, height: 20)
                     .foregroundColor(Color.white)
             } else {
-                VStack{}.frame(width: 30)
+                VStack{}.frame(width: 28, height: 20)
             }
             Text(user.userName)
                 .font(.system(size: 20))
                 .bold()
                 .foregroundColor(Color.white)
             
-            Circle()
-                .frame(width: 10, height: 10)
-                .foregroundColor(user.isEnabled ? Color.smooGreen : Color.red)
             Spacer()
         }
+        .padding(5)
         .padding(.leading, 20)
     }
 }

@@ -53,6 +53,7 @@
 		332FA4AA26599D33000319BE /* SmooMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332FA4A926599D33000319BE /* SmooMarker.swift */; };
 		332FA4AC2659A64D000319BE /* MapkitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332FA4AB2659A64D000319BE /* MapkitView.swift */; };
 		332FA4AE2659A83B000319BE /* CHAT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332FA4AD2659A83B000319BE /* CHAT.swift */; };
+		332FA4B02659E68A000319BE /* WebRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332FA4AF2659E68A000319BE /* WebRepository.swift */; };
 		3398A9EB265990F60056A7AE /* MapScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3398A9EA265990F60056A7AE /* MapScreen.swift */; };
 		DE2D1A7B39F87E2E09C6A663 /* Pods_SMOO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F54EF31F6D0756446F1F8C2B /* Pods_SMOO.framework */; };
 		F9DA048D927848408D61E58B /* Pods_SMOO_SMOOUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70EF39FE18A2F8E4D7998599 /* Pods_SMOO_SMOOUITests.framework */; };
@@ -126,6 +127,7 @@
 		332FA4A926599D33000319BE /* SmooMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmooMarker.swift; sourceTree = "<group>"; };
 		332FA4AB2659A64D000319BE /* MapkitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapkitView.swift; sourceTree = "<group>"; };
 		332FA4AD2659A83B000319BE /* CHAT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CHAT.swift; sourceTree = "<group>"; };
+		332FA4AF2659E68A000319BE /* WebRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRepository.swift; sourceTree = "<group>"; };
 		3398A9EA265990F60056A7AE /* MapScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreen.swift; sourceTree = "<group>"; };
 		47DBE59A8795151F32451254 /* Pods_SMOOTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SMOOTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A08B410A29C21682F243176 /* Pods-SMOO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SMOO.release.xcconfig"; path = "Target Support Files/Pods-SMOO/Pods-SMOO.release.xcconfig"; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 		3301580E26582FF8004DC0C6 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				332FA4AF2659E68A000319BE /* WebRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -715,6 +718,7 @@
 				3301583526584A4B004DC0C6 /* Extensions.swift in Sources */,
 				3301585226590A10004DC0C6 /* VoiceChatMenuButton.swift in Sources */,
 				332FA4A82659967F000319BE /* MAP.swift in Sources */,
+				332FA4B02659E68A000319BE /* WebRepository.swift in Sources */,
 				330158252658362C004DC0C6 /* AppEnvironment.swift in Sources */,
 				330158302658415D004DC0C6 /* Signing.swift in Sources */,
 			);

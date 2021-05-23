@@ -66,7 +66,7 @@ struct UsersList: Codable, Equatable {
                                             UserForColumn(userName: "oh jaehyuk", userProfileURL: "", userPosition: "Staff", isSpeaking: false, isEnabled: true),
                                             UserForColumn(userName: "lee kyungsup", userProfileURL: "", userPosition: "Staff", isSpeaking: false, isEnabled: false),
                                             UserForColumn(userName: "chae hyunwook", userProfileURL: "", userPosition: "Staff", isSpeaking: false, isEnabled: true),
-                                            UserForColumn(userName: "micro soft", userProfileURL: "", userPosition: "Staff", isSpeaking: false, isEnabled: true)
+                                            UserForColumn(userName: "micro soft", userProfileURL: "https://i.imgur.com/jHOXkpc.png", userPosition: "Staff", isSpeaking: false, isEnabled: true)
                                         ])]
     )
 }
