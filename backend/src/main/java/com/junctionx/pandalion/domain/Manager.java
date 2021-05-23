@@ -23,6 +23,7 @@ import java.util.Set;
 @Builder
 @Accessors(chain = true)
 @Table(name = "manager")
+@ToString(exclude = {"authorities", "groupList"})
 public class Manager {
 
     @Id

@@ -1,9 +1,6 @@
 package com.junctionx.pandalion.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import lombok.experimental.Accessors;
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.data.annotation.CreatedBy;
@@ -25,6 +22,7 @@ import java.util.UUID;
 @EntityListeners(AuditingEntityListener.class)
 @Builder
 @Accessors(chain = true)
+@ToString(exclude = {"fileList", "chattingList"})
 public class User {
 
     @Id

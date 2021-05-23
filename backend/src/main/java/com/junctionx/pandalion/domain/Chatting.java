@@ -1,9 +1,6 @@
 package com.junctionx.pandalion.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import lombok.experimental.Accessors;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
@@ -17,6 +14,7 @@ import java.time.LocalDateTime;
 @EntityListeners(AuditingEntityListener.class)
 @Builder
 @Accessors(chain = true)
+@ToString(exclude = {"user", "channel"})
 public class Chatting {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)

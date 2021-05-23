@@ -1,13 +1,12 @@
 package com.junctionx.pandalion.service;
 
 
-import com.junctionx.pandalion.domain.Authority;
-import com.junctionx.pandalion.domain.Channel;
-import com.junctionx.pandalion.domain.Group;
-import com.junctionx.pandalion.domain.Manager;
+import com.junctionx.pandalion.domain.*;
 import com.junctionx.pandalion.network.dto.ManagerDto;
 import com.junctionx.pandalion.network.response.*;
 import com.junctionx.pandalion.repository.ManagerRepository;
+import com.junctionx.pandalion.repository.UserGroupChannelRepository;
+import com.junctionx.pandalion.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -25,7 +24,11 @@ public class ManagerService {
 
     private final ManagerRepository managerRepository;
 
+    private final UserGroupChannelRepository userGroupChannelRepository;
+
     private final PasswordEncoder passwordEncoder;
+
+    private final UserRepository userRepository;
 
     @Transactional
     public Manager signup(ManagerDto managerDto) {
@@ -41,6 +44,9 @@ public class ManagerService {
                 .username(managerDto.getUsername())
                 .password(passwordEncoder.encode(managerDto.getPassword()))
                 .nickname(managerDto.getNickname())
+                .nation(managerDto.getNation())
+                .age(managerDto.getAge())
+                .workTp(managerDto.getWorkTp())
                 .authorities(Collections.singleton(authority))
                 .activated(true)
                 .build();
@@ -53,6 +59,8 @@ public class ManagerService {
         Manager manager = managerRepository.findById(1L).orElseThrow(NoSuchElementException::new);
         ForWebResponse forWebResponse = new ForWebResponse();
         List<Group> groupList = manager.getGroupList();
+        List<ChannelResponse> channelResponses = new ArrayList<>();
+        List<GroupResponse> groupResponses = new ArrayList<>();
 
         for (Group group : groupList) {
             GroupResponse groupResponse = new GroupResponse();
@@ -94,11 +102,11 @@ public class ManagerService {
 
                 channelResponse.setChattingResponse(chattingResponse);
 
-                List<ChannelResponse> channelResponses = new ArrayList<>();
+
                 channelResponses.add(channelResponse);
 
                 groupResponse.setChannelResponseList(channelResponses);
-                List<GroupResponse> groupResponses = new ArrayList<>();
+
                 groupResponses.add(groupResponse);
                 forWebResponse.setGroupResponseList(groupResponses);
             }
@@ -109,6 +117,31 @@ public class ManagerService {
         forWebResponse.setNation(manager.getNation());
         forWebResponse.setUsername(manager.getUsername());
         forWebResponse.setNickname(manager.getNickname());
+
+        UserGroupChannelResponse userGroupChannelResponse = new UserGroupChannelResponse();
+
+        List<UserGroupChannel> sort = userGroupChannelRepository.findAllByOrderByGroupIdAscChannelIdAsc();
+        List<UserGroupChannelResponse> userGroupChannelResponseList = new ArrayList<>();
+        for (UserGroupChannel s : sort) {
+            userGroupChannelResponse.setGroupId(s.getGroupId());
+            userGroupChannelResponse.setChannelId(s.getChannelId());
+            userGroupChannelResponse.setUserId(s.getUserId());
+
+            User user = userRepository.findById(s.getUserId()).orElseThrow(NoSuchElementException::new);
+
+            userGroupChannelResponse.setUsername(user.getUsername());
+            userGroupChannelResponse.setCode(user.getCode());
+            userGroupChannelResponse.setLocation(user.getLocation());
+            userGroupChannelResponse.setProfileImage(user.getProfileImage());
+            userGroupChannelResponse.setWorkTp(user.getWorkTp());
+            userGroupChannelResponse.setDisabled(user.isDisabled());
+            userGroupChannelResponse.setPhoneNumber(user.getPhoneNumber());
+            userGroupChannelResponse.setSpeaking(user.isSpeaking());
+
+            userGroupChannelResponseList.add(userGroupChannelResponse);
+        }
+
+        forWebResponse.setUserGroupChannelResponseList(userGroupChannelResponseList);
 
         return forWebResponse;
     }

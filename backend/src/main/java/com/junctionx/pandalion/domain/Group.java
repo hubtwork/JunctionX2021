@@ -1,9 +1,6 @@
 package com.junctionx.pandalion.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import lombok.experimental.Accessors;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
@@ -24,6 +21,7 @@ import java.util.List;
 @Builder
 @Accessors(chain = true)
 @Table(name = "groups")
+@ToString(exclude = {"manager", "channelList"})
 public class Group {
 
     @Id

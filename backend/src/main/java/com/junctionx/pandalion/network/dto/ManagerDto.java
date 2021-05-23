@@ -25,4 +25,10 @@ public class ManagerDto {
     @NotNull
     @Size(min = 3, max = 50)
     private String nickname;
+
+    private Integer age;
+
+    private String nation;
+
+    private String workTp;
 }

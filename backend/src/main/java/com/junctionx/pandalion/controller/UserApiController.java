@@ -13,6 +13,7 @@ import java.net.URISyntaxException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.util.NoSuchElementException;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/user")
@@ -24,7 +25,7 @@ public class UserApiController {
     private final UserRepository userRepository;
 
     @GetMapping("/send/{id}")
-    public ResponseEntity<SmsResponseDto> sendSms(@PathVariable("id") Long id) throws URISyntaxException, NoSuchAlgorithmException, InvalidKeyException, JsonProcessingException {
+    public ResponseEntity<SmsResponseDto> sendSms(@PathVariable("id") UUID id) throws URISyntaxException, NoSuchAlgorithmException, InvalidKeyException, JsonProcessingException {
 
         User user = userRepository.findById(id).orElseThrow(()-> new NoSuchElementException("User doesn't exist"));
         return smsService.sendSms(user.getPhoneNumber(), user.getUsername() + "'s chatting room code : " + user.getCode());

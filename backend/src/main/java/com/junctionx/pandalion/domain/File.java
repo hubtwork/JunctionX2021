@@ -1,9 +1,6 @@
 package com.junctionx.pandalion.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import lombok.experimental.Accessors;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -22,6 +19,7 @@ import java.util.UUID;
 @EntityListeners(AuditingEntityListener.class)
 @Builder
 @Accessors(chain = true)
+@ToString(exclude = {"manager", "user","channel"})
 public class File {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)

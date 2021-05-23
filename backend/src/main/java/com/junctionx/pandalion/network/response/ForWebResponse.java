@@ -1,5 +1,6 @@
 package com.junctionx.pandalion.network.response;
 
+import com.junctionx.pandalion.domain.UserGroupChannel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -26,4 +27,6 @@ public class ForWebResponse {
     private String workTp;
 
     private List<GroupResponse> groupResponseList;
+
+    private List<UserGroupChannelResponse> userGroupChannelResponseList;
 }
