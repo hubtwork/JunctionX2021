@@ -34,6 +34,6 @@ public class Chatting {
     private User user;
 
     @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "channel_id")
+    @JoinColumn(name = "channel_id")
     private Channel channel;
 }
