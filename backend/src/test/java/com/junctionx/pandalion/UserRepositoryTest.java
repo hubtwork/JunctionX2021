@@ -28,23 +28,33 @@ public class UserRepositoryTest extends PandalionApplicationTests{
         ArrayList result = new ArrayList();
         ArrayList a = new ArrayList();
 
-        while(true){
 
+        while(true){
+//            groupNumber = groupNumber%3;
+//            channelNumber = channelNumber%16;
+//
+//            int _groupNumber = groupNumber;
+//            int _channelNumber = channelNumber;
+//            System.out.println(groupNumber);
+//            System.out.println(channelNumber);
             Random g = new Random();
+            //g.setSeed(System.currentTimeMillis());
             Random c = new Random();
+            //c.setSeed(System.currentTimeMillis());
 
             int groupNumber =  g.nextInt(3)+1;
             int _groupNumber = groupNumber;
             int channelNumber = c.nextInt(16)+1;
             int _channelNumber = channelNumber;
-            if (!((groupNumber == 1 && (channelNumber >= 1 && channelNumber <= 4)) || (groupNumber == 2 && (channelNumber >= 5 && channelNumber <= 8)) || (groupNumber == 3 && (channelNumber >= 9 && channelNumber <= 16)))) {
+
+            if (!((groupNumber == 0 && (channelNumber >= 0 && channelNumber <= 3)) || (groupNumber == 1 && (channelNumber >= 4 && channelNumber <= 7)) || (groupNumber == 2 && (channelNumber >= 8 && channelNumber <= 15)))) {
                 continue;
             }
             String temp = Integer.toString(_groupNumber) + Integer.toString(_channelNumber);
             if (!result.contains(temp)){
                 result.add(temp);
-                a.add((long)groupNumber);
-                a.add((long)channelNumber);
+                a.add((long)(groupNumber+1));
+                a.add((long)(channelNumber+1));
             }
             if (result.size() >= personCnt){
                 break;
@@ -712,11 +722,18 @@ public class UserRepositoryTest extends PandalionApplicationTests{
         List<UserGroupChannel> all = userGroupChannelRepository.findAll();
         all.forEach(a->{
             result[a.getChannelId().intValue()-1] += 1;
+            System.out.println(a.getChannelId().intValue()-1);
+
         });
 
-//        for(int i = 0; i < 16;i++){
-//            System.out.println(result[i]);
-//        }
+//        all.forEach(a->{
+//            if (a.getChannelId() == 12){
+//                System.out.println(a.getUserId());
+//            }
+//
+//        });
+
+
     }
 
 
