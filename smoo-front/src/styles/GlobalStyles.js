@@ -18,8 +18,21 @@ const GlobalStyles = createGlobalStyle`
       font-size: 62.5%;
   }
   body{
+        /* font-family: 'NanumSquare', sans-serif;  */
 
-        font-family: 'NanumSquare', sans-serif; 
+    @font-face {
+        font-family: 'ITC Avant Garde Gothic Bold';
+        src: url("../assets/fonts/ITC Avant Garde Gothic Bold.otf") format("opentype");
+    }
+    @font-face {
+        font-family: 'ITC Avant Garde Gothic Bold';
+        font-weight: bold;
+        src: url("../assets/fonts/ITC Avant Garde Gothic Bold.otf") format("opentype");
+    }
+    @font-face {
+    font-family: 'ITC Avant Garde Gothic Bold';
+    src: url("../assets/fonts/AvantGarde-Bold.woff2") format("woff"), url("../assets/fonts/AvantGarde-Bold.ttf") format("truetype");
+}
 
   }
   a{

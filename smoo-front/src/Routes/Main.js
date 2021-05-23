@@ -6,6 +6,7 @@ import { styled, withStyles, StylesProvider } from '@material-ui/core/styles';
 import ChannelListItems from '../components/Main/ChannelListItems';
 import TabPanel from '../components/Main/TabPanel';
 // import NavTabs from '../components/Main/NavTabs';
+import AddIcon from '../assets/UploadBtn.svg';
 
 const Container = styledComponent.div`
   width: 100%;
@@ -33,11 +34,17 @@ const CustomButton = styled(Button)({
   padding: '0',
 });
 
+const AddButton = styledComponent.img`
+  width: 15px;
+  height: 15px;
+`;
+
 const StyledMenu = withStyles({
   paper: {
     border: '1px solid #d3d4d5',
     width: '100%',
     maxWidth: '250px',
+    textAlign: 'center',
   },
 })(props => (
   <Menu
@@ -106,6 +113,12 @@ function Main() {
           <MenuItem onClick={handleClose}>Profile</MenuItem>
           <MenuItem onClick={handleClose}>My account</MenuItem>
           <MenuItem onClick={handleClose}>Logout</MenuItem>
+          <MenuItem onClick={handleClose}>Add Group</MenuItem>
+          <MenuItem onClick={handleClose}>Add Group</MenuItem>
+          <MenuItem onClick={handleClose}>Add Group</MenuItem>
+          <MenuItem onClick={handleClose}>
+            <AddButton src={AddIcon} alt="add" />
+          </MenuItem>
         </StyledMenu>
         {/* <SideBarTitleContainer>
           <SideBarTitle>{title}</SideBarTitle>
