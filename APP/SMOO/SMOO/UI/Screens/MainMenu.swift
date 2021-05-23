@@ -22,11 +22,9 @@ struct MainMenu: View {
     
     /// TextChat
     @State private var textHasNewContent: Bool = false
-    let chatTopicCount: Int = 41
     
     /// Drive
     @State private var driveHasNewContent: Bool = true
-    let driveFileCount: Int = 22
     
     /// GPS
     @State private var gpsOn: Bool = true
@@ -78,7 +76,7 @@ extension MainMenu  {
                 } ) {
                     Image(systemName: "line.horizontal.3")
                         .resizable()
-                        .frame(width: 20, height: 20)
+                        .frame(width: 20, height: 16)
                 }.foregroundColor(Color.black)
                 Spacer()
             }
@@ -86,7 +84,7 @@ extension MainMenu  {
                 Spacer()
                 
                 Text(eventTitle)
-                    .font(.custom("ITC Avant Garde Gothic Bold", size: 24))
+                    .font(.custom("ITC Avant Garde Gothic Bold", size: 22))
                     .bold()
                     .foregroundColor(Color.smooGray)
                 
@@ -103,21 +101,21 @@ extension MainMenu  {
                 
                 NavigationLink(destination: VoiceScreen(users: userList.columns[2].users)) {
                     VoiceChatMenuButton(isOn: $voiceStable)
-                        .frame(height: UIScreen.screenHeight * 0.2)
+                        .frame(height: UIScreen.screenHeight * 0.19)
                 }
                 NavigationLink(destination: TextChatScreen(userCount: 4)) {
-                    TextChatMenuButton(hasNewContent: $textHasNewContent, topicCount: chatTopicCount)
-                        .frame(height: UIScreen.screenHeight * 0.2)
+                    TextChatMenuButton(hasNewContent: $textHasNewContent)
+                        .frame(height: UIScreen.screenHeight * 0.19)
                 }
                 
                 Button(action: { print("") }) {
-                    DriveMenuButton(hasNewContent: $driveHasNewContent, fileCount: driveFileCount)
-                        .frame(height: UIScreen.screenHeight * 0.2)
+                    DriveMenuButton(hasNewContent: $driveHasNewContent)
+                        .frame(height: UIScreen.screenHeight * 0.19)
                 }
                 
                 NavigationLink(destination: MapScreen(users: UserWithLocation.mocked)) {
                     MapMenuButton(gpsOn: $gpsOn)
-                        .frame(height: UIScreen.screenHeight * 0.2)
+                        .frame(height: UIScreen.screenHeight * 0.19)
                 }
                 
                 VStack{}.frame(height: 20)

@@ -32,21 +32,18 @@ struct MapMenuButton: View {
     var OnOffWrapper: some View {
         VStack {
             HStack {
-                // ON / OFF
-                Circle()
-                    .frame(width: 15, height: 15)
-                    .foregroundColor(gpsOn.wrappedValue ? Color.smooGreen : Color.red)
-                Spacer()
                 
                 if gpsOn.wrappedValue {
-                    Text("GPS On")
+                    Text("GPS ON")
                         .font(.custom("ITC Avant Garde Gothic Bold", size: 15))
                         .foregroundColor(Color.smooGreen)
                 } else {
-                    Text("GPS Disabled")
+                    Text("GPS OFF")
                         .font(.custom("ITC Avant Garde Gothic Bold", size: 15))
                         .foregroundColor(Color.red)
                 }
+                
+                Spacer()
             }
             Spacer()
         }.padding(.top, 20)

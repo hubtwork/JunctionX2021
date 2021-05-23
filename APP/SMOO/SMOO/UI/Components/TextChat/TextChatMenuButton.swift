@@ -10,8 +10,6 @@ import SwiftUI
 struct TextChatMenuButton: View {
     
     let hasNewContent: Binding<Bool>
-    /// Topic Components
-    let topicCount: Int
     
     var body: some View {
         GeometryReader { geometry in
@@ -21,7 +19,6 @@ struct TextChatMenuButton: View {
                 }
                 TitleWrapper
                 
-                TopicWrapper
             }
             .frame(width: geometry.size.width,
                    height: geometry.size.height)
@@ -36,7 +33,7 @@ struct TextChatMenuButton: View {
             HStack {
                 Text("New !")
                     .font(.custom("ITC Avant Garde Gothic Bold", size: 15))
-                    .foregroundColor(Color.white)
+                    .foregroundColor(Color.smooGreen)
                 
                 Spacer()
             }
@@ -53,14 +50,6 @@ struct TextChatMenuButton: View {
         .padding(.bottom, 37)
     }
     
-    var TopicWrapper: some View {
-        VStack {
-            Spacer()
-            topicText
-        }.padding(.leading, 25)
-        .padding(.bottom, 20)
-    }
-    
     var menuText: some View {
         HStack {
             Text("Chat")
@@ -70,18 +59,10 @@ struct TextChatMenuButton: View {
             Spacer()
         }
     }
-    var topicText: some View {
-        HStack {
-            Text("\(topicCount) topics")
-                .font(.system(size: 15))
-                .foregroundColor(Color.white)
-            Spacer()
-        }
-    }
 }
 
 struct TextChatMenuButton_Previews: PreviewProvider {
     static var previews: some View {
-        TextChatMenuButton(hasNewContent: .constant(true), topicCount: 10)
+        TextChatMenuButton(hasNewContent: .constant(true))
     }
 }
