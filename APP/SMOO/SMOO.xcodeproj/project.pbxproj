@@ -54,6 +54,7 @@
 		332FA4AC2659A64D000319BE /* MapkitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332FA4AB2659A64D000319BE /* MapkitView.swift */; };
 		332FA4AE2659A83B000319BE /* CHAT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332FA4AD2659A83B000319BE /* CHAT.swift */; };
 		332FA4B02659E68A000319BE /* WebRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332FA4AF2659E68A000319BE /* WebRepository.swift */; };
+		332FA4B22659FFDC000319BE /* RoundedCornerShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332FA4B12659FFDC000319BE /* RoundedCornerShape.swift */; };
 		3398A9EB265990F60056A7AE /* MapScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3398A9EA265990F60056A7AE /* MapScreen.swift */; };
 		DE2D1A7B39F87E2E09C6A663 /* Pods_SMOO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F54EF31F6D0756446F1F8C2B /* Pods_SMOO.framework */; };
 		F9DA048D927848408D61E58B /* Pods_SMOO_SMOOUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70EF39FE18A2F8E4D7998599 /* Pods_SMOO_SMOOUITests.framework */; };
@@ -128,6 +129,7 @@
 		332FA4AB2659A64D000319BE /* MapkitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapkitView.swift; sourceTree = "<group>"; };
 		332FA4AD2659A83B000319BE /* CHAT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CHAT.swift; sourceTree = "<group>"; };
 		332FA4AF2659E68A000319BE /* WebRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRepository.swift; sourceTree = "<group>"; };
+		332FA4B12659FFDC000319BE /* RoundedCornerShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerShape.swift; sourceTree = "<group>"; };
 		3398A9EA265990F60056A7AE /* MapScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreen.swift; sourceTree = "<group>"; };
 		47DBE59A8795151F32451254 /* Pods_SMOOTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SMOOTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A08B410A29C21682F243176 /* Pods-SMOO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SMOO.release.xcconfig"; path = "Target Support Files/Pods-SMOO/Pods-SMOO.release.xcconfig"; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 				3301583626584B7C004DC0C6 /* RoundButton.swift */,
 				33015861265967EB004DC0C6 /* HintTextField.swift */,
 				330158682659724F004DC0C6 /* CircleImageView.swift */,
+				332FA4B12659FFDC000319BE /* RoundedCornerShape.swift */,
 			);
 			path = SupportingViews;
 			sourceTree = "<group>";
@@ -694,6 +697,7 @@
 				3301585826590FDF004DC0C6 /* DriveMenuButton.swift in Sources */,
 				3301583E2658A357004DC0C6 /* ChatMembers.swift in Sources */,
 				3301585526590D88004DC0C6 /* MapMenuButton.swift in Sources */,
+				332FA4B22659FFDC000319BE /* RoundedCornerShape.swift in Sources */,
 				332FA4A626599453000319BE /* GoogleMapsView.swift in Sources */,
 				33015815265831BD004DC0C6 /* SystemEventsHandler.swift in Sources */,
 				3301585C26592406004DC0C6 /* USERS.swift in Sources */,

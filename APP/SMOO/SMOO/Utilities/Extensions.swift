@@ -18,6 +18,7 @@ extension UIScreen{
 extension Color {
     static let smooGreen = Color("SmooGreen")
     static let smooGray = Color("SmooGray")
+    static let smooLightGray = Color("SmooLightGray")
 }
 
 extension View {

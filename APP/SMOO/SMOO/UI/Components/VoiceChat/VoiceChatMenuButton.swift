@@ -14,16 +14,28 @@ struct VoiceChatMenuButton: View {
     
     var body: some View {
         GeometryReader { geometry in
-            ZStack {
+            HStack(spacing: 0) {
+                ZStack {
+                    
+                    OnOffWrapper
+                    
+                    TitleWrapper
+                    
+                }
+                .frame(width: geometry.size.width * 0.7,
+                       height: geometry.size.height)
+                .background(Color.smooGray)
+                .cornerRadius(15, corners: .topLeft)
+                .cornerRadius(15, corners: .bottomLeft)
                 
-                OnOffWrapper
-                
-                TitleWrapper
+                VStack {
+                    
+                }.frame(width: geometry.size.width * 0.3,
+                        height: geometry.size.height)
+                .background(Color.smooLightGray)
+                .cornerRadius(15, corners: .topRight)
+                .cornerRadius(15, corners: .bottomRight)
             }
-            .frame(width: geometry.size.width,
-                   height: geometry.size.height)
-            .background(Color.smooGray)
-            .cornerRadius(15)
         }
                 
     }
@@ -36,16 +48,6 @@ struct VoiceChatMenuButton: View {
                     .frame(width: 15, height: 15)
                     .foregroundColor(isOn.wrappedValue ? Color.smooGreen : Color.red)
                 Spacer()
-                
-                if isOn.wrappedValue {
-                    Text("Stable")
-                        .font(.custom("ITC Avant Garde Gothic Bold", size: 15))
-                        .foregroundColor(Color.smooGreen)
-                } else {
-                    Text("Disabled")
-                        .font(.custom("ITC Avant Garde Gothic Bold", size: 15))
-                        .foregroundColor(Color.red)
-                }
             }
             Spacer()
         }.padding(.top, 20)
