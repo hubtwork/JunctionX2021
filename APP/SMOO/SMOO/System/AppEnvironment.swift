@@ -38,8 +38,8 @@ extension AppEnvironment {
     }
     
     private static func configuredApiRepositories(session: URLSession) -> ApiRepositoriesContainer {
-        
-        return .init()
+        let smooLoadableRepository = SmooLoadableWebRepository(session: session, baseURL: "http://52.231.11.134:80")
+        return .init(smooLoadableRepository: smooLoadableRepository)
     }
     
     private static func configuredInteractors(appState: Store<AppState>,
@@ -52,7 +52,7 @@ extension AppEnvironment {
 
 private extension AppEnvironment {
     struct ApiRepositoriesContainer {
-        
+        let smooLoadableRepository: SmooLoadableWebRepository
     }
 }
 

@@ -10,7 +10,7 @@ import Combine
 
 struct AppState: Equatable {
     
-    var userData = UserData()
+    var userData = UserData(token: nil)
     var routing = ViewRouting()
     var system = System()
     
@@ -18,7 +18,7 @@ struct AppState: Equatable {
 
 extension AppState {
     struct UserData: Equatable {
-        
+        let token: String?
     }
 }
 
