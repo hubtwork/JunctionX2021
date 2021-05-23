@@ -26,7 +26,9 @@ struct ContentView: View {
                 Signing()
                     .inject(container)
             }
-        }.onReceive(signInStateUpdate) { self.isSigned = $0 }
+        }
+        .animation(.easeInOut)
+        .onReceive(signInStateUpdate) { self.isSigned = $0 }
     }
     
     private var signInStateUpdate: AnyPublisher<Bool, Never> {

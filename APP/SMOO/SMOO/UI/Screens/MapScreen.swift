@@ -12,13 +12,34 @@ struct MapScreen: View {
     @Environment(\.injected) private var injected: DIContainer
     @Environment(\.presentationMode) var presentation
     
+    let users: [UserWithLocation]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        content
+            .navigationBarHidden(true)
     }
 
 }
 
 extension MapScreen {
+    
+    var content: some View {
+        ZStack {
+            /// Title Bar & Map Area Collaboration
+            VStack(spacing: 1) {
+                titleBar
+                    .padding(.horizontal, 20)
+                Divider().background(Color.black)
+                mapArea
+            }
+
+        }
+    }
+    
+    var mapArea: some View {
+        GoogleMapsView(eventLocation: Location(lat: 37.558148, long: 127.000165), users: users)
+            .ignoresSafeArea(.all, edges: .bottom)
+    }
     
     var titleBar: some View {
         HStack(spacing: 5){
@@ -28,24 +49,11 @@ extension MapScreen {
                     .scaledToFit()
                     .frame(width: 20, height: 20)
                     
-                Text("Voice")
+                Text("Map")
                     .font(.custom("ITC Avant Garde Gothic Bold", size: 20))
                     .foregroundColor(Color.black)
             }.foregroundColor(Color.black)
             Spacer()
-            
-            Image(systemName: "person.fill")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 20, height: 20)
-            Text("11")
-                .font(.system(size: 20))
-                .foregroundColor(Color.black)
-                .padding(.trailing, 20)
-            
-            Image(systemName: "line.horizontal.3")
-                .resizable()
-                .frame(width: 25, height: 20)
         }
         .padding(.vertical, 10)
     }
@@ -53,7 +61,8 @@ extension MapScreen {
 
 struct MapScreen_Previews: PreviewProvider {
     static var previews: some View {
-        MapScreen()
+        MapScreen(users: UserWithLocation.mocked)
             .inject(AppEnvironment.bootstrap().container)
+            .previewDevice("iPhone 12")
     }
 }

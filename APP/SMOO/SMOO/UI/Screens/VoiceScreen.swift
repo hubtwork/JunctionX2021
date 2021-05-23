@@ -38,6 +38,7 @@ extension VoiceScreen {
                 VStack{}.frame(height: 70)
                 membersList
             }.padding(.horizontal, 20)
+            .padding(.bottom, 80)
             /// Voice Input Area
             VStack(spacing: 20) {
                 Spacer()
@@ -57,6 +58,8 @@ extension VoiceScreen {
     
     var voiceInputArea: some View {
         HStack {
+            
+            
             Spacer()
             Circle()
                 .stroke(Color.black)
@@ -114,7 +117,7 @@ extension VoiceScreen {
 
 struct VoiceScreen_Previews: PreviewProvider {
     static var previews: some View {
-        VoiceScreen(users: UsersList.mocked.columns[0].users)
+        VoiceScreen(users: UsersList.mocked.columns[2].users)
             .previewDevice("iPhone 12")
     }
 }

@@ -19,6 +19,8 @@ struct User: Codable, Equatable {
     let userProfileURL: String
     let userPosition: String
     
+    let userLocation: UserLocation
+    
     let isSpeaking: Bool
     let isEnabled: Bool
     
@@ -57,12 +59,12 @@ struct UsersList: Codable, Equatable {
                                         ]),
             UserColumn(channelName: "Attendance",
                                          users: [
-                                            UserForColumn(userName: "kim sungjin", userProfileURL: "", userPosition: "Manager", isSpeaking: false, isEnabled: true),
+                                            UserForColumn(userName: "kim sungjin", userProfileURL: "", userPosition: "Manager", isSpeaking: true, isEnabled: true),
                                             UserForColumn(userName: "baek minkyu", userProfileURL: "", userPosition: "Staff", isSpeaking: false, isEnabled: true),
                                             UserForColumn(userName: "heo hyunjun", userProfileURL: "", userPosition: "Staff", isSpeaking: false, isEnabled: true),
                                             UserForColumn(userName: "lee changsup", userProfileURL: "", userPosition: "Manager", isSpeaking: false, isEnabled: true),
                                             UserForColumn(userName: "oh jaehyuk", userProfileURL: "", userPosition: "Staff", isSpeaking: false, isEnabled: true),
-                                            UserForColumn(userName: "lee kyungsup", userProfileURL: "", userPosition: "Staff", isSpeaking: false, isEnabled: true),
+                                            UserForColumn(userName: "lee kyungsup", userProfileURL: "", userPosition: "Staff", isSpeaking: false, isEnabled: false),
                                             UserForColumn(userName: "chae hyunwook", userProfileURL: "", userPosition: "Staff", isSpeaking: false, isEnabled: true),
                                             UserForColumn(userName: "micro soft", userProfileURL: "", userPosition: "Staff", isSpeaking: false, isEnabled: true)
                                         ])]

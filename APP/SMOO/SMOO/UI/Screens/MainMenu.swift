@@ -107,7 +107,7 @@ extension MainMenu  {
             VStack(spacing: 20) {
                 VStack{}.frame(height: 10)
                 
-                NavigationLink(destination: VoiceScreen(users: userList.columns[0].users)) {
+                NavigationLink(destination: VoiceScreen(users: userList.columns[2].users)) {
                     VoiceChatMenuButton(isOn: $voiceStable, topicCount: voiceTopicCount)
                         .frame(height: UIScreen.screenHeight * 0.2)
                 }
@@ -121,7 +121,7 @@ extension MainMenu  {
                         .frame(height: UIScreen.screenHeight * 0.2)
                 }
                 
-                Button(action: { gpsOn.toggle() }) {
+                NavigationLink(destination: MapScreen(users: UserWithLocation.mocked)) {
                     MapMenuButton(gpsOn: $gpsOn)
                         .frame(height: UIScreen.screenHeight * 0.2)
                 }
