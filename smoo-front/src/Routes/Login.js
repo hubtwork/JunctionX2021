@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 import { userApi } from '../api';
 import { AuthContent, AuthWrapper, InputWithLabel } from '../components/Auth';
 
@@ -65,6 +66,7 @@ function Login() {
   } = useInput('');
 
   const [disabled, setDisabled] = useState(false);
+  const history = useHistory();
 
   const loginUser = async userInfo => {
     setDisabled(true);
@@ -75,6 +77,7 @@ function Login() {
       axios.defaults.headers.common.Authorization = `Bearer ${data.token}`;
 
       console.log(data);
+      history.push({ pathname: '/main', state: { data } });
     } catch (error) {
       console.log(error);
     } finally {
@@ -87,8 +90,6 @@ function Login() {
     setDisabled(true);
     event.preventDefault();
     loginUser({ username, password });
-
-    alert(`Submitting Name ${username}`);
 
     resetUserName();
     resetPassword();
@@ -122,7 +123,7 @@ function Login() {
           </LoginForm>
           <UserUtilContainer>
             <UtilText>Forgot your password?</UtilText>
-            <UtilText>Forgot your password?</UtilText>
+            <UtilText>Need an account? Register</UtilText>
           </UserUtilContainer>
         </AuthContent>
       </AuthWrapper>

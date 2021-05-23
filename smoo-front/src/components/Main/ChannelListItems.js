@@ -55,32 +55,28 @@ const ChannelLink = styled.a`
   position: relative;
   color: #000;
   text-decoration: none;
-  color: #fff;
+  color: ${props => (props.active ? '#7ffa91' : '#fff')};
   margin: 1rem 0;
 `;
 
-function ChannelListItems({ changeHeader }) {
+function ChannelListItems({ channelDatas, changeHeader }) {
   const [isOpen, setIsOpen] = useState(true);
-
-  const dummyData = ['1', '2', '3'];
-  useEffect(() => {
-    console.log('click!!@');
-  }, [isOpen]);
 
   const handleClick = () => {
     console.log('click');
     setIsOpen(!isOpen);
   };
 
-  const changeChannel = idx => {
-    console.log(idx);
+  const changeChannel = event => {
+    console.log(event);
+    // console.log(JSON.stringify(channelDatas[idx]));
     changeHeader('change');
   };
 
   return (
     <ChannelContainer>
       <FolderContainer onClick={handleClick}>
-        <Folder> hello </Folder>
+        <Folder> Channel </Folder>
         {/* {isOpen ? (
           <DetailsIcon color="#7ffa91" />
         ) : (
@@ -97,33 +93,16 @@ function ChannelListItems({ changeHeader }) {
       </FolderContainer>
       <ChannelListContainer open={isOpen}>
         <ChannelList open={isOpen}>
-          <ChannelItem open={isOpen}>
-            <ChannelLink>Hello</ChannelLink>
-          </ChannelItem>
-          <ChannelItem open={isOpen}>
-            <ChannelLink onClick={changeChannel}>Hello</ChannelLink>
-          </ChannelItem>
-          <ChannelItem open={isOpen}>
-            <ChannelLink>Hello</ChannelLink>
-          </ChannelItem>
-          <ChannelItem open={isOpen}>
-            <ChannelLink>Hello</ChannelLink>
-          </ChannelItem>
-          <ChannelItem open={isOpen}>
-            <ChannelLink>Hello</ChannelLink>
-          </ChannelItem>
-          <ChannelItem open={isOpen}>
-            <ChannelLink>Hello</ChannelLink>
-          </ChannelItem>
-          <ChannelItem open={isOpen}>
-            <ChannelLink>Hello</ChannelLink>
-          </ChannelItem>
-          <ChannelItem open={isOpen}>
-            <ChannelLink>Hello</ChannelLink>
-          </ChannelItem>
-          <ChannelItem open={isOpen}>
-            <ChannelLink>Hello</ChannelLink>
-          </ChannelItem>
+          {channelDatas &&
+            channelDatas.map(channel => {
+              return (
+                <ChannelItem key={channel.channelId} open={isOpen}>
+                  <ChannelLink onClick={changeChannel}>
+                    {channel.name}
+                  </ChannelLink>
+                </ChannelItem>
+              );
+            })}
         </ChannelList>
       </ChannelListContainer>
     </ChannelContainer>
@@ -132,6 +111,8 @@ function ChannelListItems({ changeHeader }) {
 
 ChannelListItems.propTypes = {
   changeHeader: PropTypes.func.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  channelDatas: PropTypes.array.isRequired,
 };
 
 export default ChannelListItems;
