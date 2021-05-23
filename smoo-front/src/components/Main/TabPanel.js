@@ -14,6 +14,10 @@ import Drive from './Drive';
 
 import logo from '../../assets/logo.png';
 
+const Container = styledComponent.div`
+  width: 100%;
+  height: 100%;
+`;
 const CustomAppBar = styled(AppBar)({
   background: '#454545',
   height: '7rem',
@@ -29,7 +33,7 @@ const CustomTab = styled(Tab)({
 
 const InitialPanel = styledComponent.div`
   width: 100%;
-  height: calc(100% - 7rem);
+  height: calc(100vh - 7rem);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,7 +41,7 @@ const InitialPanel = styledComponent.div`
 `;
 
 const LogoImage = styledComponent.img`
-  width: 50%;
+  width: 30%;
   vertical-align: middle;
 `;
 
@@ -130,56 +134,58 @@ export default function NavTabs({ headerText }) {
 
   console.log(`headerText: ${headerText}`);
   return (
-    <div className={classes.root}>
-      <CustomAppBar position="static">
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          aria-label="nav tabs"
-          classes={{
-            indicator:
-              value !== 0 ? classes.indicator : classes.hiddenIndicator,
-          }}
-        >
-          <LinkTab
-            label="Page Hidden"
-            href="/drafts"
-            {...a11yProps(0, value)}
-            style={{ display: 'none' }}
-          />
-          <LinkTab label="Voice" {...a11yProps(1, value)} />
-          <LinkTab label="Chat" {...a11yProps(2, value)} />
-          <LinkTab label="Drive" {...a11yProps(3, value)} />
-          <LinkTab label="Map" {...a11yProps(4, value)} />
-        </Tabs>
-      </CustomAppBar>
-      {value === 0 ? (
-        <InitialPanel>
-          <LogoImage src={logo} alt="logo" />{' '}
-        </InitialPanel>
-      ) : (
-        <>
-          <Header value={value}>{headerText}</Header>
-          <InsideContainer>
-            <TabPanel style={{ display: 'none' }} value={value} index={0}>
-              Page Hidden
-            </TabPanel>
-            <TabPanel value={value} index={1}>
-              <Voice />
-            </TabPanel>
-            <TabPanel value={value} index={2}>
-              <Chat />
-            </TabPanel>
-            <TabPanel value={value} index={3}>
-              <Drive />
-            </TabPanel>
-            <TabPanel value={value} index={4}>
-              Map
-            </TabPanel>
-          </InsideContainer>
-        </>
-      )}
-    </div>
+    <Container>
+      <div className={classes.root}>
+        <CustomAppBar position="static">
+          <Tabs
+            value={value}
+            onChange={handleChange}
+            aria-label="nav tabs"
+            classes={{
+              indicator:
+                value !== 0 ? classes.indicator : classes.hiddenIndicator,
+            }}
+          >
+            <LinkTab
+              label="Page Hidden"
+              href="/drafts"
+              {...a11yProps(0, value)}
+              style={{ display: 'none' }}
+            />
+            <LinkTab label="Voice" {...a11yProps(1, value)} />
+            <LinkTab label="Chat" {...a11yProps(2, value)} />
+            <LinkTab label="Drive" {...a11yProps(3, value)} />
+            <LinkTab label="Map" {...a11yProps(4, value)} />
+          </Tabs>
+        </CustomAppBar>
+        {value === 0 ? (
+          <InitialPanel>
+            <LogoImage src={logo} alt="logo" />
+          </InitialPanel>
+        ) : (
+          <>
+            <Header value={value}>{headerText}</Header>
+            <InsideContainer>
+              <TabPanel style={{ display: 'none' }} value={value} index={0}>
+                Page Hidden
+              </TabPanel>
+              <TabPanel value={value} index={1}>
+                <Voice />
+              </TabPanel>
+              <TabPanel value={value} index={2}>
+                <Chat />
+              </TabPanel>
+              <TabPanel value={value} index={3}>
+                <Drive />
+              </TabPanel>
+              <TabPanel value={value} index={4}>
+                Map
+              </TabPanel>
+            </InsideContainer>
+          </>
+        )}
+      </div>
+    </Container>
   );
 }
 

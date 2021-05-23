@@ -5,8 +5,8 @@ import { Login, Workspace, Channel, Main } from './index';
 const Router = () => (
   <BrowserRouter>
     <Switch>
-      <Route path="/workspace" component={Workspace} />
-      <Route path="/channel" component={Channel} />
+      <Route path="/main/workspace" component={Main} />
+      <Route path="/main/channel" component={Main} />
       <Route path="/main" component={Main} />
       <Route path="/" exact component={Login} />
 

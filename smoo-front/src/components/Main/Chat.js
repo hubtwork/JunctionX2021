@@ -6,7 +6,7 @@ import UploadBtn from '../../assets/UploadBtn.svg';
 import defaultProfile from '../../assets/default-profile.svg';
 
 const Container = styled.div`
-  width: 100%;
+  /* width: 100%; */
   height: calc(100vh - 30rem);
   overflow-y: scroll;
   display: flex;
@@ -78,29 +78,35 @@ const LineContainer = styled.div``;
 const Date = styled.span``;
 
 const TypingContainer = styled.div`
-  flex: 1;
   display: flex;
   position: absolute;
   bottom: 0;
   height: 55px;
-  width: 70%;
+  flex: 1;
   margin-bottom: 10px;
+  align-items: center;
 `;
 
 const Typing = styled.input`
   margin: 0px 10px;
-  flex: 1;
+  width: 1200px;
   background-color: rgba(69, 69, 69, 0.05);
   border-radius: 27px;
   padding: 20px;
   font-size: 20px;
 `;
 
-const AddBtn = styled.img``;
+const AddBtn = styled.img`
+  width: 40px;
+  height: 40px;
+`;
 
 const Emoticon = styled.img``;
 
-const SendBtn = styled.img``;
+const SendBtn = styled.img`
+  width: 40px;
+  height: 40px;
+`;
 
 function Chat() {
   return (
