@@ -13,7 +13,7 @@ import java.util.List;
 @Builder
 public class GroupResponse {
 
-    private Long id;
+    private Long groupId;
 
     private String name;
 

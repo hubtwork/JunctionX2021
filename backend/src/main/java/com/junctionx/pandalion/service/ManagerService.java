@@ -58,91 +58,97 @@ public class ManagerService {
 
         Manager manager = managerRepository.findById(1L).orElseThrow(NoSuchElementException::new);
         ForWebResponse forWebResponse = new ForWebResponse();
-//        List<Group> groupList = manager.getGroupList();
-//        List<ChannelResponse> channelResponses = new ArrayList<>();
-//        List<GroupResponse> groupResponses = new ArrayList<>();
-//
-//        for (Group group : groupList) {
-//            GroupResponse groupResponse = new GroupResponse();
-//            groupResponse.setId(group.getId());
-//            groupResponse.setRegion(group.getRegion());
-//            groupResponse.setName(group.getName());
-//            // 아직 setChannelResponseList 추가 안함.
-//            List<Channel> channelList = group.getChannelList();
-//
-//            for (Channel channel : channelList) {
-//                ChannelResponse channelResponse = new ChannelResponse();
-//                channelResponse.setId(channel.getId());
-//                channelResponse.setName(channel.getName());
-//                channelResponse.setCode(channel.getCode());
-//                channelResponse.setLocation(channel.getLocation());
-//
-//                FileResponse fileResponse = new FileResponse();
-//                fileResponse.setId(channel.getFile().getId());
-//                fileResponse.setAuth(channel.getFile().getAuth());
-//                fileResponse.setCapacity(channel.getFile().getCapacity());
-//                fileResponse.setOriginFileName(channel.getFile().getOriginFileName());
-//                fileResponse.setType(channel.getFile().getType());
-//                fileResponse.setRegisteredTime(channel.getFile().getRegisteredTime());
-//
-//                channelResponse.setFileResponse(fileResponse);
-//
-//                ChattingResponse chattingResponse = new ChattingResponse();
-//                chattingResponse.setId(channel.getChatting().getId());
-//                chattingResponse.setText(channel.getChatting().getText());
-//                chattingResponse.setSelf(channel.getChatting().isSelf());
-//                chattingResponse.setRegisteredTime(channel.getChatting().getRegisteredTime());
-//                chattingResponse.setUnreadCount(channel.getChatting().getUnreadCount());
-//
-//                ChattingUserResponse chattingUserResponse = new ChattingUserResponse();
-//                chattingUserResponse.setUsername(channel.getChatting().getUser().getUsername());
-//                chattingUserResponse.setProfileImage(channel.getChatting().getUser().getProfileImage());
-//                chattingUserResponse.setWorkTp(channel.getChatting().getUser().getWorkTp());
-//
-//                chattingResponse.setChattingUserResponse(chattingUserResponse);
-//
-//                channelResponse.setChattingResponse(chattingResponse);
-//
-//
-//                channelResponses.add(channelResponse);
-//
-//                groupResponse.setChannelResponseList(channelResponses);
-//
-//                groupResponses.add(groupResponse);
-//                forWebResponse.setGroupResponseList(groupResponses);
-//            }
-//        }
-//
-//        forWebResponse.setId(1L);
-//        forWebResponse.setAge(manager.getAge());
-//        forWebResponse.setNation(manager.getNation());
-//        forWebResponse.setUsername(manager.getUsername());
-//        forWebResponse.setNickname(manager.getNickname());
-//
-//        UserGroupChannelResponse userGroupChannelResponse = new UserGroupChannelResponse();
-//
-//        List<UserGroupChannel> sort = userGroupChannelRepository.findAllByOrderByGroupIdAscChannelIdAsc();
-//        List<UserGroupChannelResponse> userGroupChannelResponseList = new ArrayList<>();
-//        for (UserGroupChannel s : sort) {
-//            userGroupChannelResponse.setGroupId(s.getGroupId());
-//            userGroupChannelResponse.setChannelId(s.getChannelId());
-//            userGroupChannelResponse.setUserId(s.getUserId());
-//
-//            User user = userRepository.findById(s.getUserId()).orElseThrow(NoSuchElementException::new);
-//
-//            userGroupChannelResponse.setUsername(user.getUsername());
-//            userGroupChannelResponse.setCode(user.getCode());
-//            userGroupChannelResponse.setLocation(user.getLocation());
-//            userGroupChannelResponse.setProfileImage(user.getProfileImage());
-//            userGroupChannelResponse.setWorkTp(user.getWorkTp());
-//            userGroupChannelResponse.setDisabled(user.isDisabled());
-//            userGroupChannelResponse.setPhoneNumber(user.getPhoneNumber());
-//            userGroupChannelResponse.setSpeaking(user.isSpeaking());
-//
-//            userGroupChannelResponseList.add(userGroupChannelResponse);
-//        }
-//
-//        forWebResponse.setUserGroupChannelResponseList(userGroupChannelResponseList);
+        List<Group> groupList = manager.getGroupList();
+
+        List<GroupResponse> groupResponses = new ArrayList<>();
+        for (Group group : groupList) {
+            GroupResponse groupResponse = new GroupResponse();
+
+            List<Channel> channelList = group.getChannelList();
+            List<ChannelResponse> channelResponses = new ArrayList<>();
+            for (Channel channel : channelList) {
+                ChannelResponse channelResponse = new ChannelResponse();
+
+                List<File> fileList = channel.getFiles();
+                List<FileResponse> fileResponses = new ArrayList<>();
+                for (File file : fileList) {
+                    FileResponse fileResponse = new FileResponse();
+                    fileResponse.setId(file.getId());
+                    fileResponse.setAuth(file.getAuth());
+                    fileResponse.setCapacity(file.getCapacity());
+                    fileResponse.setOriginFileName(file.getOriginFileName());
+                    fileResponse.setType(file.getType());
+                    fileResponse.setRegisteredTime(file.getRegisteredTime());
+                    fileResponses.add(fileResponse);
+                }
+
+                List<Chatting> chattingList = channel.getChattings();
+                List<ChattingResponse> chattingResponses = new ArrayList<>();
+                for (Chatting chatting : chattingList) {
+                    ChattingResponse chattingResponse = new ChattingResponse();
+                    chattingResponse.setId(chatting.getId());
+                    chattingResponse.setText(chatting.getText());
+                    chattingResponse.setSelf(chatting.isSelf());
+                    chattingResponse.setRegisteredTime(chatting.getRegisteredTime());
+                    chattingResponse.setUnreadCount(chatting.getUnreadCount());
+                    chattingResponse.setUsername(chatting.getUser().getUsername());
+                    chattingResponse.setProfileImage(chatting.getUser().getProfileImage());
+                    chattingResponse.setWorkTp(chatting.getUser().getWorkTp());
+                    chattingResponses.add(chattingResponse);
+                }
+
+                channelResponse.setChannelId(channel.getId());
+                channelResponse.setName(channel.getName());
+                channelResponse.setCode(channel.getCode());
+                channelResponse.setLocation(channel.getLocation());
+                channelResponse.setFileResponseList(fileResponses);
+                channelResponse.setChattingResponseList(chattingResponses);
+                channelResponses.add(channelResponse);
+            }
+
+            groupResponse.setChannelResponseList(channelResponses);
+            groupResponse.setGroupId(group.getId());
+            groupResponse.setRegion(group.getRegion());
+            groupResponse.setName(group.getName());
+            groupResponses.add(groupResponse);
+        }
+
+        forWebResponse.setGroupResponseList(groupResponses);
+
+        forWebResponse.setId(1L);
+        forWebResponse.setAge(manager.getAge());
+        forWebResponse.setNation(manager.getNation());
+        forWebResponse.setUsername(manager.getUsername());
+        forWebResponse.setNickname(manager.getNickname());
+        forWebResponse.setWorkTp(manager.getWorkTp());
+
+
+        List<UserGroupChannel> sort = userGroupChannelRepository.findAllByOrderByGroupIdAscChannelIdAsc();
+
+        List<UserGroupChannelResponse> userGroupChannelResponseList = new ArrayList<>();
+        for (UserGroupChannel s : sort) {
+            UserGroupChannelResponse userGroupChannelResponse = new UserGroupChannelResponse();
+            userGroupChannelResponse.setGroupId(s.getGroupId());
+            userGroupChannelResponse.setChannelId(s.getChannelId());
+            userGroupChannelResponse.setUserId(s.getUserId());
+
+            User user = userRepository.findById(s.getUserId()).orElseThrow(NoSuchElementException::new);
+
+            userGroupChannelResponse.setUsername(user.getUsername());
+            userGroupChannelResponse.setCode(user.getCode());
+            userGroupChannelResponse.setLocation(user.getLocation());
+            userGroupChannelResponse.setProfileImage(user.getProfileImage());
+            userGroupChannelResponse.setWorkTp(user.getWorkTp());
+            userGroupChannelResponse.setDisabled(user.isDisabled());
+            userGroupChannelResponse.setPhoneNumber(user.getPhoneNumber());
+            userGroupChannelResponse.setSpeaking(user.isSpeaking());
+
+
+            userGroupChannelResponseList.add(userGroupChannelResponse);
+
+        }
+
+        forWebResponse.setUserGroupChannelResponseList(userGroupChannelResponseList);
 
         return forWebResponse;
     }

@@ -5,13 +5,15 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class ChannelResponse {
 
-    private Long id;
+    private Long channelId;
 
     private String location;
 
@@ -19,7 +21,7 @@ public class ChannelResponse {
 
     private String name;
 
-    private FileResponse fileResponse;
+    private List<FileResponse> fileResponseList;
 
-    private ChattingResponse chattingResponse;
+    private List<ChattingResponse> chattingResponseList;
 }

@@ -24,5 +24,10 @@ public class ChattingResponse {
 
     private Integer unreadCount;
 
-    private ChattingUserResponse chattingUserResponse;
+    private String username;
+
+    private String profileImage;
+
+    private String workTp;
+
 }
