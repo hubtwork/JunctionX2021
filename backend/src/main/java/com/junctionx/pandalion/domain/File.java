@@ -46,8 +46,8 @@ public class File {
     @ManyToOne(fetch = FetchType.LAZY)
     private User user;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "channel_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "channel_id")
     private Channel channel;
 
     @CreatedDate

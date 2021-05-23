@@ -3,6 +3,7 @@ package com.junctionx.pandalion;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.junctionx.pandalion.domain.UserGroupChannel;
 import com.junctionx.pandalion.repository.UserGroupChannelRepository;
+import com.junctionx.pandalion.repository.UserRepository;
 import com.junctionx.pandalion.sms.service.SmsService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,9 @@ public class SortTest extends PandalionApplicationTests{
     @Autowired
     private SmsService smsService;
 
+    @Autowired
+    private UserRepository userRepository;
+
     @Test
     void isSortTest(){
         List<UserGroupChannel> sort = userGroupChannelRepository.findAllByOrderByGroupIdAscChannelIdAsc();
@@ -32,5 +36,10 @@ public class SortTest extends PandalionApplicationTests{
     @Test
     void sendSmsTest() throws URISyntaxException, NoSuchAlgorithmException, InvalidKeyException, JsonProcessingException {
         smsService.sendSms("01075187260", "Dohyun Lee's chatting room code : dX3s55mL");
+    }
+
+    @Test
+    void getUserIdTest(){
+        System.out.println(userRepository.findAll());
     }
 }

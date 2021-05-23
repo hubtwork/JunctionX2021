@@ -10,6 +10,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -47,10 +48,10 @@ public class Channel {
     @ManyToOne(fetch = FetchType.LAZY)
     private Group group;
 
-    @OneToOne(mappedBy = "channel", fetch = FetchType.LAZY)
-    private File file;
+    @OneToMany(mappedBy = "channel", fetch = FetchType.LAZY)
+    private List<File> files;
 
-    @OneToOne(mappedBy = "channel", fetch = FetchType.LAZY)
-    private Chatting chatting;
+    @OneToMany(mappedBy = "channel", fetch = FetchType.LAZY)
+    private List<Chatting> chattings;
 
 }
