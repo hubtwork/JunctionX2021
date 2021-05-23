@@ -12,6 +12,8 @@ struct VoiceChatMenuButton: View {
     /// On / Off Count
     let isOn: Binding<Bool>
     
+    @State private var isSpeaking: Bool = false
+    
     var body: some View {
         GeometryReader { geometry in
             HStack(spacing: 0) {
@@ -29,6 +31,26 @@ struct VoiceChatMenuButton: View {
                 .cornerRadius(15, corners: .bottomLeft)
                 
                 VStack {
+                    
+                    Button(action: {
+                        withAnimation {
+                            isSpeaking.toggle()
+                        }
+                    }) {
+                        Circle()
+                            .stroke(Color.black)
+                            .frame(width: 58, height: 58)
+                            .foregroundColor(Color.white)
+                            .overlay(Circle()
+                                        .frame(width: 57, height: 57)
+                                        .foregroundColor(Color.white)
+                                        .overlay(Circle()
+                                                    .frame(width: 35, height: 35)
+                                                    .foregroundColor(isSpeaking ? Color.smooGreen : Color.red)
+                                                    .animation(.easeInOut)
+                                        )
+                            )
+                    }
                     
                 }.frame(width: geometry.size.width * 0.3,
                         height: geometry.size.height)
