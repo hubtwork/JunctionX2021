@@ -106,7 +106,7 @@ public class ChannelRepositoryTest extends PandalionApplicationTests{
         channelRepository.save(channel11);
 
         Channel channel12 = Channel.builder()
-                .name("peer session")
+                .name("Food Festival")
                 .location("x:400, y:280")
                 .group(groupRepository.getOne(3L))
                 .build();
@@ -122,7 +122,7 @@ public class ChannelRepositoryTest extends PandalionApplicationTests{
         channelRepository.save(channel13);
 
         Channel channel14 = Channel.builder()
-                .name("food contest")
+                .name("Food Contest")
                 .location("x:700, y:280")
                 .group(groupRepository.getOne(3L))
                 .build();
@@ -130,7 +130,7 @@ public class ChannelRepositoryTest extends PandalionApplicationTests{
         channelRepository.save(channel14);
 
         Channel channel15 = Channel.builder()
-                .name("coding test")
+                .name("Coding Test")
                 .location("x:700, y:780")
                 .group(groupRepository.getOne(3L))
                 .build();
@@ -138,7 +138,7 @@ public class ChannelRepositoryTest extends PandalionApplicationTests{
         channelRepository.save(channel15);
 
         Channel channel16 = Channel.builder()
-                .name("food contest")
+                .name("Feer Session")
                 .location("x:900, y:280")
                 .group(groupRepository.getOne(3L))
                 .build();
